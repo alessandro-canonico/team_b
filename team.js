@@ -12,5 +12,3 @@ const teamMembers = [
         petName: ["Milo", "Luppolo"]
     }
 ]
-
-console.log(teamMembers)
