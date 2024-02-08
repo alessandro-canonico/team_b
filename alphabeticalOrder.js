@@ -51,6 +51,23 @@ const teamMembers = [
     },
   ];
 
+/* const idMembers = teamMembers.map((members) => members.surname + ` ` + members.name);
+
+idMembers.sort((a, b) => {
+  const surnameA = a.surname 
+  const surnameB = b.surname 
+  if (surnameA < surnameB) {
+    return -1;
+  }
+  if (surnameA > surnameB) {
+    return 1;
+  }
+  return 0;
+}
+)
+
+console.log(idMembers); */
+
 teamMembers.sort((a, b) => {
     const surnameA = a.surname 
     const surnameB = b.surname 
