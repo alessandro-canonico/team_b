@@ -81,15 +81,26 @@ function alphabetical() {
 //  Print the team in age order 
 (name age) const byAge = teamMembers.toSorted((a, b) => a.age - b.age)
 console.log(byAge)
-// la migliore alterantiva è un ciclo for, dove confronto i con i+1 e costrusico un nuovo array con indice +i o -i */
+// la migliore alterantiva sarebbe stata un ciclo for, per posizionare ogni valore ciclato e confrontato sopra o sotto un certo indice */
 
-/* //Print the team middle age
+/*  //Print the team middle age
 
-semplice calcolo matematico*/
+ let ages=[]; teamMembers.forEach((x)=> ages.push(x.age));
+ let average = ((ages.reduce((i,x)=> i + x, 0)) / ages.length);
+ console.log (average.toFixed(0))
+ */
 
-/* //Print who has a pet (name petName)
+ //Print who has a pet (name petName)
+const petOwner= [];
+//function havePets (name, petName) {this.name=name, this.petName=petName};
 
-metodo forEach confrontando una conversione in boolean? un array in boolean come risulta?*/
+teamMembers.map((o)=>{return petOwner.push ( Boolean(o.petName))});
+
+//for (let index= 0; index < petOwner.length; ++index) 
+//{ if (petOwner[index].pet == true) {console.log("found")} else{console.log("found too")}}
+//{if (petOwner[index].pet == true) {petOwner[index].name= teamMembers[index].name; petOwner[index].petName= teamMembers[index].petName;}}
+
+console.log(petOwner) 
 
 /* //Print who wrote ‘LOL’ or ‘League Of Legends’ as a favorite video game. (name)
 
