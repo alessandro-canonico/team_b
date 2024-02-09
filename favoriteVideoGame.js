@@ -44,19 +44,21 @@ const teamMembers = [
     city: "Palermo",
     hobby: ["Anime", "Manga", "Videogiochi"],
     favoriteFood: "Hamburger americano",
-    favoriteVideoGame: "LOL",
+    favoriteVideoGame: "Guild Wars 2",
     favoriteFilm: "Il signore degli anelli",
     favoriteBook: "Dalla terra alla luna",
     petName: ["Milo", "Luppolo"],
   },
 ];
 
-function membersFavoriteVideoGames (teamMembers) {
-  if (teamMembers.filter((members) =>
-    members.favoriteVideoGame === `LOL` ||
-    members.favoriteVideoGame === `League Of Legends`)) {
-      console.log(membersFavoriteVideoGames);
-    } else console.log(`none like LOL`)
-  }
-  
+const checkVideoGame = teamMembers.filter(
+  (members) =>
+    members.favoriteVideoGame === "LOL" ||
+    members.favoriteVideoGame === "League Of Legends"
+);
 
+console.log(checkVideoGame);
+
+if (checkVideoGame == []) {
+  console.log(`none of the team members has LOL as favorite Video Game`)
+};
