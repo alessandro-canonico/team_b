@@ -53,6 +53,6 @@ const teamMembers = [
 
 const membersWithPet = teamMembers
   .filter((members) => members.petName != "")
-  .map((members) => members.name + `: ` + members.petName);
+ // .map((members) => members.name + `: ` + members.petName);
 
 console.log(membersWithPet);

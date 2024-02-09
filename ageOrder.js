@@ -53,6 +53,6 @@ const teamMembers = [
 
 const ageMembers = teamMembers
   .sort((a, b) => a.age - b.age)
-  .map((members) => members.name + `: ` + members.age);
+ // .map((members) => members.name + `: ` + members.age);
 
 console.log(ageMembers);
