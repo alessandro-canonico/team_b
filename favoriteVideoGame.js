@@ -51,14 +51,3 @@ const teamMembers = [
   },
 ];
 
-const checkVideoGame = teamMembers.filter(
-  (members) =>
-    members.favoriteVideoGame === "LOL" ||
-    members.favoriteVideoGame === "League Of Legends"
-);
-
-console.log(checkVideoGame);
-
-if (checkVideoGame == []) {
-  console.log(`none of the team members has LOL as favorite Video Game`)
-};

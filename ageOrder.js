@@ -51,8 +51,8 @@ const teamMembers = [
   },
 ];
 
-const ageMembers = teamMembers
-  .sort((a, b) => a.age - b.age)
- // .map((members) => members.name + `: ` + members.age);
+function ageOrder(array) {
+  return array.sort((a, b) => a.age - b.age);
+}
 
-console.log(ageMembers);
+console.log(ageOrder(teamMembers));
