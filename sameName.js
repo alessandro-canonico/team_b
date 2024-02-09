@@ -38,7 +38,7 @@ const teamMembers = [
   },
 
   {
-    name: "Ilyas",
+    name: "Alessandro",
     surname: "Macaluso",
     age: 26,
     city: "Palermo",
@@ -51,35 +51,14 @@ const teamMembers = [
   },
 ];
 
-/* const idMembers = teamMembers.map((members) => members.surname + ` ` + members.name);
-
-idMembers.sort((a, b) => {
-  const surnameA = a.surname 
-  const surnameB = b.surname 
-  if (surnameA < surnameB) {
-    return -1;
-  }
-  if (surnameA > surnameB) {
-    return 1;
-  }
-  return 0;
-}
-)
-
-console.log(idMembers); */
-
-function alphabeticalOrder(array) {
-  return array.sort((a, b) => {
-    const surnameA = a.surname;
-    const surnameB = b.surname;
-    if (surnameA < surnameB) {
-      return -1;
+function sameName(array) {
+  return array.filter((id1, id2) => {
+    const nameA = id1.name;
+    const nameB = id2.name;
+    if ((nameA === nameB)) {
+      return `prova`;
     }
-    if (surnameA > surnameB) {
-      return 1;
-    }
-    return 0;
   });
 }
 
-console.log(alphabeticalOrder(teamMembers));
+console.log(sameName(teamMembers));
