@@ -105,7 +105,7 @@ const teamMembers = [
 */
 
 /* //  Print if there are some members with the same name (name)
-    
+
     function Member(name) {this.name= name, this.count= 0};
 
     let names= [];
