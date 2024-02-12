@@ -25,7 +25,7 @@ const teamMembers = [
   },
 
   {
-    name: "Alessandro",
+    name: "Andrea",
     surname: "Canonico",
     age: 27,
     city: "Napoli",
@@ -38,7 +38,7 @@ const teamMembers = [
   },
 
   {
-    name: "Alessandro",
+    name: "Ylias",
     surname: "Macaluso",
     age: 26,
     city: "Palermo",
@@ -51,14 +51,25 @@ const teamMembers = [
   },
 ];
 
-function sameName(array) {
-  return array.filter((id1, id2) => {
-    const nameA = id1.name;
-    const nameB = id2.name;
-    if ((nameA === nameB)) {
-      return `prova`;
-    }
-  });
+/* function sameName(array) {
+  for (let i = 0; i <= teamMembers.length; i++) { 
+    if (teamMembers[i].name === teamMembers[i++].name) {
+      console.log(teamMembers[i]);
+    } else {console.log(`no`);}
+  }
+
+   if (checkNames.length > 0) {
+    console.log(checkNames);
+  } else {
+    console.log("no");
+  }
 }
 
-console.log(sameName(teamMembers));
+sameName(teamMembers);
+  */
+
+function sameName (array){ 
+  array.forEach(personA =>
+      console.log (array.filter((personB) => personA.name === personB.name && personA !== personB)
+      ))
+}
