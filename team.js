@@ -100,4 +100,4 @@ function favGame(array) {
   } 
 }
 
-favGame(teamMembers)
+favGame(teamMembers);
