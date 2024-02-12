@@ -25,7 +25,7 @@ const teamMembers = [
   },
 
   {
-    name: "Alessandro",
+    name: "Andrea",
     surname: "Canonico",
     age: 27,
     city: "Napoli",
@@ -38,7 +38,7 @@ const teamMembers = [
   },
 
   {
-    name: "Ilyas",
+    name: "Ylias",
     surname: "Macaluso",
     age: 26,
     city: "Palermo",
@@ -51,53 +51,25 @@ const teamMembers = [
   },
 ];
 
-function alphabeticalOrder(array) {
-  return array.sort((a, b) => {
-    const surnameA = a.surname;
-    const surnameB = b.surname;
-    if (surnameA < surnameB) {
-      return -1;
-    }
-    if (surnameA > surnameB) {
-      return 1;
-    }
-    return 0;
-  });
-}
+/* function sameName(array) {
+  for (let i = 0; i <= teamMembers.length; i++) { 
+    if (teamMembers[i].name === teamMembers[i++].name) {
+      console.log(teamMembers[i]);
+    } else {console.log(`no`);}
+  }
 
-console.log(alphabeticalOrder(teamMembers));
-
-function ageOrder(array) {
-  return array.sort((a, b) => a.age - b.age);
-}
-
-console.log(ageOrder(teamMembers));
-
-function avgAge(array) {
-  const sumMembersAge = array.reduce((acc, members) => acc + members.age, 0);
-  return sumMembersAge / teamMembers.length;
-}
-
-console.log(`The average age of team members is: ` + avgAge(teamMembers));
-
-function membersWithPet(array) {
-  return array.filter((members) => members.petName != "");
-}
-
-console.log(membersWithPet(teamMembers));
-
-function favGame(array) {
-  const checkGames = array.filter(
-    (member) =>
-      member.favoriteVideoGame == "League Of Legends" ||
-      member.favoriteVideoGame == "LOL"
-  )
-  
-  if (checkGames.length > 0) {
-    console.log(checkGames)
+   if (checkNames.length > 0) {
+    console.log(checkNames);
   } else {
-    console.log("No one likes Legue Of Legends");
-  } 
+    console.log("no");
+  }
 }
 
-favGame(teamMembers);
+sameName(teamMembers);
+  */
+
+function sameName (array){ 
+  array.forEach(personA =>
+      console.log (array.filter((personB) => personA.name === personB.name && personA !== personB)
+      ))
+}
