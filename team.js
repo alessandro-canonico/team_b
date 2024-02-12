@@ -23,8 +23,7 @@ const teamMembers = [
     favoriteBook: "ciclo delle fondazioni",
     petName: "Birba",
   },
-
-  {
+  {  
     name: "Alessandro",
     surname: "Canonico",
     age: 27,
@@ -36,7 +35,6 @@ const teamMembers = [
     favoriteBook: "",
     petName: "",
   },
-
   {
     name: "Ilyas",
     surname: "Macaluso",
@@ -44,12 +42,13 @@ const teamMembers = [
     city: "Palermo",
     hobby: ["Anime", "Manga", "Videogiochi"],
     favoriteFood: "Hamburger americano",
-    favoriteVideoGame: "Guild Wars 2",
+    favoriteVideoGame: "LOL",
     favoriteFilm: "Il signore degli anelli",
     favoriteBook: "Dalla terra alla luna",
     petName: ["Milo", "Luppolo"],
   },
-];
+]
+
 
 function alphabeticalOrder(array) {
   return array.sort((a, b) => {
@@ -101,3 +100,15 @@ function favGame(array) {
 }
 
 favGame(teamMembers);
+
+//Funzione 6 : stampa i membri del team che hanno lo stesso nome (WIP)
+function sameName (array){ 
+  array.forEach(personA =>
+      console.log (array.filter(personB => 
+          personB.name === personA.name &&
+          personB !== personA)
+      )
+  )
+}
+sameName(teamMembers)
+
