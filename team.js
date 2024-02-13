@@ -23,7 +23,7 @@ const teamMembers = [
     favoriteBook: "ciclo delle fondazioni",
     petName: "Birba",
   },
-  {  
+  {
     name: "Alessandro",
     surname: "Canonico",
     age: 27,
@@ -47,8 +47,7 @@ const teamMembers = [
     favoriteBook: "Dalla terra alla luna",
     petName: ["Milo", "Luppolo"],
   },
-]
-
+];
 
 function alphabeticalOrder(array) {
   return array.sort((a, b) => {
@@ -90,31 +89,33 @@ function favGame(array) {
     (member) =>
       member.favoriteVideoGame == "League Of Legends" ||
       member.favoriteVideoGame == "LOL"
-  )
-  
+  );
+
   if (checkGames.length > 0) {
-    console.log(checkGames)
+    console.log(checkGames);
   } else {
     console.log("No one likes Legue Of Legends");
-  } 
+  }
 }
 
-favGame(teamMembers)
+favGame(teamMembers);
 
-let sameNamedPerson = []
+let sameNamedPerson = [];
 
-  function sameName(array) {
-    array.forEach(personA => {
-        let sameNamedPersons = array.some (personB => personA.name === personB.name && personA !== personB)
-        if (sameNamedPersons){
-            sameNamedPerson.push(personA)
-        }
-    })
-    if (sameNamedPerson.length != 0){
-        return sameNamedPerson
-    } else { 
-        return "Non ci sono membri con lo stesso nome"  
+function sameName(array) {
+  array.forEach((personA) => {
+    let sameNamedPersons = array.some(
+      (personB) => personA.name === personB.name && personA !== personB
+    );
+    if (sameNamedPersons) {
+      sameNamedPerson.push(personA);
     }
+  });
+  if (sameNamedPerson.length != 0) {
+    return sameNamedPerson;
+  } else {
+    return "Non ci sono membri con lo stesso nome";
   }
+}
 
-console.log(sameName(teamMembers))
+console.log(sameName(teamMembers));
