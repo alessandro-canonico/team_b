@@ -99,16 +99,22 @@ function favGame(array) {
   } 
 }
 
-favGame(teamMembers);
+favGame(teamMembers)
 
-//Funzione 6 : stampa i membri del team che hanno lo stesso nome (WIP)
-function sameName (array){ 
-  array.forEach(personA =>
-      console.log (array.filter(personB => 
-          personB.name === personA.name &&
-          personB !== personA)
-      )
-  )
-}
-sameName(teamMembers)
+let sameNamedPerson = []
 
+  function sameName(array) {
+    array.forEach(personA => {
+        let sameNamedPersons = array.some (personB => personA.name === personB.name && personA !== personB)
+        if (sameNamedPersons){
+            sameNamedPerson.push(personA)
+        }
+    })
+    if (sameNamedPerson.length != 0){
+        return sameNamedPerson
+    } else { 
+        return "Non ci sono membri con lo stesso nome"  
+    }
+  }
+
+console.log(sameName(teamMembers))
