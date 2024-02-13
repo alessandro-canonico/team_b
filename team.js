@@ -100,6 +100,7 @@ function favGame(array) {
   } 
 }
 
+
 favGame(teamMembers)
 
 let sameNamedPerson = []
@@ -119,3 +120,6 @@ let sameNamedPerson = []
   }
 
 console.log(sameName(teamMembers))
+
+favGame(teamMembers);
+
