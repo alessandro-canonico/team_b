@@ -147,7 +147,7 @@ const teamMembers = [
             
         });
         if(result.length === 0){
-            result[0]=("nessun omonimo");
+            result[0]=("nessun omonimo")
             
         }
         console.log(result)
