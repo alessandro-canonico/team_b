@@ -18,19 +18,19 @@ const teamMembers = [
         city: "Cuneo",
         hobby: ["serie tv", "Videogiochi", "fotografia"],
         favoriteFood: ["lasagne", "pizza"],
-        favoriteVideoGame: "Minecraft",
+        favoriteVideoGame: "LOL",
         favoriteFilm: "Star Wars, canonico",
         favoriteBook: "ciclo delle fondazioni",
         petName: "Birba"
     }, 
     {
-      name: "Andrea",
+      name: "Alesandro",
       surname: "Canonico",
       age: 27,
       city: "Napoli",
       hobby: "mixing vinyls",
       favoriteFood: "Polpo alla luciana",
-      favoriteVideoGame: "",
+      favoriteVideoGame: "League Of Legends",
       favoriteFilm: "Non essere cattivo",
       favoriteBook: "",
       petName: "",
@@ -95,35 +95,62 @@ const teamMembers = [
     console.log(petOwner)
 */
 
-/* //   Print who wrote ‘LOL’ or ‘League Of Legends’ as a favorite video game. (name)
+/*  //   Print who wrote ‘LOL’ or ‘League Of Legends’ as a favorite video game. (name)
     
-    let found=[];
-    teamMembers.forEach((o)=>{
-    if (o.favoriteFood.includes("pizza")) {console.log("found " + o.name + ": " + o.petName)};
-    })
-    console.log(found) 
-*/
+    function favGame(array) {
+    const favGames = array.filter(
+        (member) =>
+        member.favoriteVideoGame == "League Of Legends" ||
+        member.favoriteVideoGame == "LOL"
+        );
 
-/* //  Print if there are some members with the same name (name)
-
-    function Member(name) {this.name= name, this.count= 0};
-
-    let names= [];
-
-    for (let i= 0; i < teamMembers.length; i++) {
-        names[i] = new Member(teamMembers[i].name);
-        teamMembers.forEach((n)=> {
-            if (names[i].name == n.name) {names[i].count++}
-        });
+      if (favGames.length > 0) {
+        console.log(favGames)
+        } else {
+        console.log("No one likes Legue Of Legends");
+        };
     };
+    favGame(teamMembers); */
 
-    for (let v= 0; v < teamMembers.length; v++) {
-        if(
-            (names[v+1] != undefined) && (names[v].name === names[v+1].name)
-        ) {
-                names.splice(v+1, 1); v--
-            }
+/*  //  Print if there are some members with the same name (name)
+
+    function homonyms(members){
+        let memberfind=[];
+
+        memberfind.push(...members); //crea copia indipendente
+
+        memberfind.map(add=> add.count =0) //aggiunge parametro count= 0
+        
+        for (let i= 0; i < members.length; i++) {
+            members.forEach((others)=> {
+                if (members[i].name == others.name) {memberfind[i].count++} 
+            });
+        }; // assegna +1 a count, ogni volta che compare il nome nel ciclo
+
+        memberfind.filter((pass)=> pass.count > 1).forEach(
+            found => console.log(found.name + " " + found.surname)
+        ); // se count è >1 allora  in nome compare più volte, omonimi trovati e nomi stampati
     }
-    
-   console.log(names)
 */
+/*   // ALTERNATIVA\\
+
+    function sameName(array){
+        let omonimi;
+        let result= [];
+        array.map(personA =>{
+            omonimi =array.filter (personB=> personA.name === personB.name && personA !== personB);
+            //console.log (omonimi)
+            omonimi.find (omonimo=> {if (omonimo.length !== 0) {
+            result.push(`${omonimo.name}` + " " + `${omonimo.surname}`)
+
+            }})
+            
+        });
+        if(result.length === 0){
+            result[0]=("nessun omonimo");
+            
+        }
+        console.log(result)
+    }
+    sameName(teamMembers)
+ */
