@@ -56,9 +56,10 @@ completeTask(done)*/
 function listTasks(next) {setTimeout(()=>{ next.map((i)=>console.log(`remaining tasks:
 - ${i}`))},800)};
 
-tasks.forEach((i)=>console.log(`remaining tasks:
+// DOMANDA )perchè non funziona se dentro a setTimeout?) \\
+/* tasks.forEach((i)=>console.log(`remaining tasks:
 check - ${i}`))
-
+ */ 
 
 
 listTasks(tasks)
