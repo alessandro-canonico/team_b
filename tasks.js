@@ -2,7 +2,7 @@ let tasks = ['jump rope', 'push ups', 'plank', 'lunges', 'crunch'];
 let chosenTask = "reverse push ups";
 let done= 2;
 
-/* function addTask(task, callback) {
+ function addTask(task, callback) {
    let confirm= "Task added successfully";
    let errorText= "Task must be a non empty string";
 
@@ -51,15 +51,10 @@ function completeTask(index,){
 
 } 
 
-completeTask(done)*/
+completeTask(done)
 
 function listTasks(next) {setTimeout(()=>{ next.map((i)=>console.log(`remaining tasks:
 - ${i}`))},800)};
-
-// DOMANDA )perchè non funziona se dentro a setTimeout?) \\
-/* tasks.forEach((i)=>console.log(`remaining tasks:
-check - ${i}`))
- */ 
 
 
 listTasks(tasks)
