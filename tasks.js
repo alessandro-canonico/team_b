@@ -5,7 +5,7 @@ function addTask(task, callback) {
   console.log("Adding task...")
   setTimeout(() => {
     if (typeof task === "string" && task !== "") {
-      tasks.push(task);
+      tasks.push(task)
       callback(null, `Task added successfully`)
     } else {
       callback(new Error("Task must be a non empy string"), null)
@@ -13,13 +13,13 @@ function addTask(task, callback) {
   }, 1000)
 }
 
-addTask(10, screenMessage);
+addTask(10, screenMessage)
 
 //function2: complete task
 function completeTask(index, callback) {
   setTimeout(() => {
     console.log("Removing completed task...")
-  }, 2000);
+  }, 2000)
   setTimeout(() => {
     if (index < tasks.length && index >= 0) {
       tasks.splice(index, 1)
@@ -30,7 +30,7 @@ function completeTask(index, callback) {
   }, 3000)
 }
 
-completeTask(0, screenMessage);
+completeTask(0, screenMessage)
 
 //callback function for function 1 & 2
 function screenMessage(error, message) {
@@ -44,10 +44,11 @@ function screenMessage(error, message) {
 //function3: list all tasks on console
 function listTasks(tasksArray) {
   console.log("Remaining tasks:")
-  tasksArray.forEach((task) => {
-    // setTimeout(() => {
-    console.log(`- ${task}`)
-    // }, 5000)
+  
+  setTimeout(() => {
+    tasksArray.forEach((task) => {
+        console.log(`- ${task}`)
+    }, 5000)
   })
 }
 
