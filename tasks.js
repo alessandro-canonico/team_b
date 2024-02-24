@@ -1,37 +1,32 @@
 let tasks = [`Backup OS`, `Push tasks.js`, `Check Google Calendar`];
 
-
 //function1: addTask
-function addTask(callback, ...task) {
+function addTask(task, callback) {
   console.log("Adding task...");
   setTimeout(() => {
-    task.forEach((task) => {
-      if (typeof task === "string" && task !== "") {
-        tasks.push(task);
-        callback(null, `Task "${task}" added successfully`);
-      } else {
-        callback(new Error("Task must be a non empty string"), null);
-      }
-    });
+    if (typeof task === "string" && task !== "") {
+      tasks.push(task);
+      callback(null, `Task added successfully`);
+    } else {
+      callback(new Error("Task must be a non empy string"), null);
+    }
   }, 1000);
 }
 
-addTask(screenMessage, `live coding`, `correre`);
+addTask(10, screenMessage);
 
 //function2: complete task
-function completeTask(callback, ...index) {
+function completeTask(index, callback) {
   setTimeout(() => {
     console.log("Removing completed task...");
   }, 2000);
   setTimeout(() => {
-    index.forEach((index) => {
-      if (index < tasks.length && index >= 0) {
-        callback(null, `Task "${tasks[index]}" removed successfully`);
-        tasks.splice(index, 1);
-      } else {
-        callback(new Error("Invalid task index"), null);
-      }
-    });
+    if (index < tasks.length && index >= 0) {
+      tasks.splice(index, 1);
+      callback(null, `Task "${tasks[index]}" removed successfully`);
+    } else {
+      callback(new Error("Invalid task index"), null);
+    }
   }, 3000);
 }
 
@@ -47,10 +42,9 @@ function screenMessage(error, message) {
 }
 
 //function3: list all tasks on console
+
 function listTasks(next) {setTimeout(()=>{ next.map((i)=>console.log(`remaining tasks:
 - ${i}`))},800)};
-
-
 
 
 listTasks(tasks);
