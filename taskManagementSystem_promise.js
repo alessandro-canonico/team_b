@@ -6,11 +6,11 @@ let toAdd= [];      //CREO UN ARRAY DI SUPPORTO, SARA' NECESSARIO ...
 
 function addTask(task) { 
   console.log(`Adding task...`);
-  toAdd.push(task)   //... QUI: L'INPUT DEVE NECESSARIAMENTE DIVENTARE UN ARRAY PER FUNZIONARE, MA 'task' RESTA UNA STRINGA
+  let toAdd= [task];   //... QUI: L'INPUT DEVE NECESSARIAMENTE DIVENTARE UN ARRAY PER FUNZIONARE, MA 'task' RESTA UNA STRINGA
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (typeof task === "string" && task !== "") {
-        tasks= [...toAdd]   // LO SPERAD E' QUI, INSERISCE AUTOMATICAMENTE IL CONTENUTO DI 'toAdd' DENTRO 'tasks'
+        tasks= [...tasks, ...toAdd]   // LO SPERAD E' QUI, INSERISCE AUTOMATICAMENTE IL CONTENUTO DI 'toAdd' DENTRO 'tasks'
         //console.log(tasks);
         resolve(`Task "${task}" added successfully`);
       } else {
