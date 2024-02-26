@@ -15,26 +15,27 @@ function addTask(callback, ...task) {
     })
 }
 
-addTask(screenMessage, `live coding`, `correre`)
+
+addTask(screenMessage, `live coding`, ``, `complete exercise`, `checkpoint test`);
 
 //function2: complete task
-// function completeTask(callback, ...index) {
-//     setTimeout(() => {
-//         console.log("Removing completed task...")
-//     }, 2000)
-//     setTimeout(() => {
-//         index.forEach((index) => {
-//             if (index < tasks.length && index >= 0) {
-//                 callback(null, `Task "${tasks[index]}" removed successfully`)
-//                 tasks.splice(index, 1)
-//             } else {
-//                 callback(new Error("Invalid task index"), null)
-//             }
-//         })
-//     }, 3000)
-// }
+function completeTask(callback, ...index) {
+    setTimeout(() => {
+        console.log("Removing completed task...")
+    }, 2000)
+    setTimeout(() => {
+        index.forEach((index) => {
+            if (index < tasks.length && index >= 0) {
+                callback(null, `Task "${tasks[index]}" removed successfully`)
+                tasks.splice(index, 1)
+            } else {
+                callback(new Error("Invalid task index"), null)
+            }
+        })
+    }, 3000)
+}
 
-// completeTask(screenMessage, 0, 1, 8)
+completeTask(screenMessage, 0, 1, 8)
 
 //callback function for function 1 & 2
 function screenMessage(error, message) {
@@ -47,14 +48,14 @@ function screenMessage(error, message) {
     }, 1000)
 }
 
-// function listTasks() {
-//     console.log(`Remaining tasks:`)
-//     for (let i = 0; i < tasks.length; i++) {
-//         const index = tasks.indexOf(tasks[i])
-//         console.log(`${index} : ${tasks[i]} `)
-//     }
-// }
+function listTasks() {
+    console.log(`Remaining tasks:`)
+    for (let i = 0; i < tasks.length; i++) {
+        const index = tasks.indexOf(tasks[i])
+        console.log(`${index} : ${tasks[i]} `)
+    }
+}
 
-// setTimeout(() => {
-//     listTasks()
-// }, 4000)
+setTimeout(() => {
+    listTasks()
+}, 4000)
