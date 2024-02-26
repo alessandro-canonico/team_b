@@ -23,14 +23,14 @@ function completeTask(index, callback) {
   setTimeout(() => {
     if (index < tasks.length && index >= 0) {
       tasks.splice(index, 1);
-      callback(null, `Task removed successfully`);
+      callback(null, `Task "${tasks[index]}" removed successfully`);
     } else {
       callback(new Error("Invalid task index"), null);
     }
   }, 3000);
 }
 
-completeTask(0, screenMessage);
+completeTask(screenMessage, 0, 1, 8);
 
 //callback function for function 1 & 2
 function screenMessage(error, message) {
@@ -42,13 +42,10 @@ function screenMessage(error, message) {
 }
 
 //function3: list all tasks on console
-function listTasks(tasksArray) {
-  console.log("Remaining tasks:");
-  tasksArray.forEach((task) => {
-    console.log(`- ${task}`);
-  });
-}
 
-setTimeout(() => {
-  listTasks(tasks);
-}, 4000);
+function listTasks(next) {setTimeout(()=>{ next.map((i)=>console.log(`remaining tasks:
+- ${i}`))},800)};
+
+
+listTasks(tasks);
+
