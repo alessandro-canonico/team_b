@@ -15,7 +15,7 @@ function addTask(callback, ...task) {
   }, 1000);
 }
 
-addTask(screenMessage, `live coding`, `correre`);
+addTask(screenMessage, `live coding`, ``, `complete exercise`, `checkpoint test`);
 
 //function2: complete task
 function completeTask(callback, ...index) {
