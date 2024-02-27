@@ -1,11 +1,13 @@
-let tasks = [`Backup OS`, `Push tasks.js`, `Check Google Calendar`];
+let tasks = [];
 
-function addTask(task) {
+
+function addTask(task) { 
   console.log(`Adding task...`);
+  let toAdd= [task  ];
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (typeof task === "string" && task !== "") {
-        tasks.push(task);
+        tasks= [...tasks, ...toAdd]
         resolve(`Task "${task}" added successfully`);
       } else {
         reject(`Task must be a non empty string`);
