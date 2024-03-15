@@ -49,12 +49,15 @@ function screenMessage(error, message) {
 }
 
 function listTasks() {
-    console.log(`Remaining tasks:`)
-    for (let i = 0; i < tasks.length; i++) {
+    console.log(`Remaining tasks:`);
+    tasks.forEach((task, index) => {
+        console.log(task, index+1);
+    });
+/*     for (let i = 0; i < tasks.length; i++) {
         const index = tasks.indexOf(tasks[i])
         console.log(`${index} : ${tasks[i]} `)
-    }
-}
+    }*/
+} 
 
 setTimeout(() => {
     listTasks()
