@@ -1,125 +1,16 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Ilyas'Navbar Exercise</title>
+        <title>IKEA 2.0</title>
         <meta charset="utf-8" />
-        <meta name="author" content="Ilyas Macaluso" />
-        <meta name="description" content="HTML navbar exercise" />
-        <style>
-            :root {
-                --def-font: Roboto, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen,
-                    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-                --button-color: rgb(0, 123, 39);
-                font-family: var(--def-font);
-                --font-color: rgb(44, 44, 44);
-            }
-            body {
-                margin: 0px;
-            }
-            nav {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: flex-start;
-                align-items: center;
-                padding: 24px 8vw;
-            }
-            .navlinks {
-                display: flex;
-                align-items: center;
-            }
-            .nav-link {
-                display: flex;
-                text-decoration: none;
-                color: var(--font-color);
-                padding: 8px 12px;
-            }
-            .nav-link:hover {
-                font-weight: bold;
-            }
-            .logo img {
-                height: 32px;
-                margin-right: 12px;
-            }
-            .button {
-                height: 48px;
-                display: inline-block;
-                box-sizing: border-box;
-                font-family: inherit;
-                font-size: inherit;
-                background-color: var(--nav-bg);
-                border: 1px solid var(--button-color);
-                border-radius: 8px;
-                padding: 8px 16px;
-                color: var(--button-color);
-            }
-            .button:hover {
-                color: white;
-                background-color: var(--button-color);
-            }
-
-            /* inizio sezioni box */
-
-            .box-container {
-                margin: 0px 8vw;
-                display: flex;
-                gap: 16px;
-            }
-            .h-box {
-                background-image: url(https://www.ikea.com/global/en/images/PH_196231_0f92c9cc30.jpg?f=xxxl);
-                background-position: center center;
-                background-size:cover;
-                border-radius: 8px;
-                display: flex;
-                height: 75vh;
-                width: 100%;
-                align-items: flex-end;
-                box-shadow: inset 0px -10px 60px;
-            }
-            .h-box-content {
-                color: white;
-                display: flex;
-                align-items: flex-end;
-                border-radius: 16px;
-                height: fit-content;
-                width: 100%;
-                padding: 24px;
-                padding-left: 16px;
-                padding-bottom: 16px;
-            }
-
-            .h-box-title{
-                display: flex;
-            }
-            .h-box-icon {
-                display: none;
-                margin-right: 12px;
-                width: fit-content;
-                height: fit-content;
-            }
-
-            /* freccietta a comparsa */
-            .h-box:hover .h-box-icon{
-                display: flex;
-            }
-            .h-box:hover .h-box-text p{
-                margin-left: 36px;
-            }
-            .h-box-icon img {
-                height: 24px;
-                width: 24px;
-            }
-            div.h-box-content h2 {
-                margin: 0px;
-            }
-            div.h-box-content p {
-                margin: 0px;
-            }
-        </style>
+        <meta name="author" content="TeamB" />
+        <meta name="description" content="ikea website remake" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
     <body>
         <header>
             <nav>
-                <section class="navlinks">
+                <section class="nav-links">
                     <a class="logo" href=""><img src="assets/images/brand/ikea-logo.png" alt="logo ikea" /></a>
                     <a class="nav-link" href="">Stories</a>
                     <a class="nav-link" href="">Jobs</a>
@@ -132,7 +23,7 @@
                 <div class="h-box">
                     <div class="h-box-content">
                         <div class="h-box-text">
-                            <p>Sopratitolo</p>
+                            <h5>Sopratitolo</h5>
                             <div class="h-box-title">
                                 <div class="h-box-icon">
                                     <img
@@ -149,7 +40,7 @@
                 <div class="h-box">
                     <div class="h-box-content">
                         <div class="h-box-text">
-                            <p>Sopratitolo</p>
+                            <h5>Sopratitolo</h5>
                             <div class="h-box-title">
                                 <div class="h-box-icon">
                                     <img
