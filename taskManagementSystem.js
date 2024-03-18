@@ -49,11 +49,16 @@ function screenMessage(error, message) {
 }
 
 function listTasks() {
+<<<<<<< HEAD
     console.log(`Remaining tasks:`)
     for (let i = 0; i < tasks.length; i++) {
         const index = tasks.indexOf(tasks[i])
         console.log(`${index} : ${tasks[i]} `)
     }
+=======
+  console.log(`Remaining tasks:`);
+  tasks.forEach((task, index) => console.log(`${index} : ${task} `))
+>>>>>>> ikea-wip
 }
 
 setTimeout(() => {
