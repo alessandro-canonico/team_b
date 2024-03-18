@@ -26,13 +26,26 @@
             .navlinks {
                 display: flex;
                 align-items: center;
+
             }
-            .nav-link {
-                display: flex;
+
+            .nav-link.short{
+                display: inline;
+                width: 56px;
+                text-decoration: none;
+                color: var(--font-color);
+                padding: 8px 16px;
+            }
+
+            .nav-link.large{
+                display: inline;
+                width:104px;
                 text-decoration: none;
                 color: var(--font-color);
                 padding: 8px 12px;
             }
+
+
             .nav-link:hover {
                 font-weight: bold;
             }
@@ -65,15 +78,18 @@
                 gap: 16px;
             }
             .h-box {
-                background-image: url(https://www.ikea.com/global/en/images/PH_196231_0f92c9cc30.jpg?f=xxxl);
-                background-position: center center;
+                background: linear-gradient(to bottom, transparent,transparent 65%, rgba(29, 15, 4, 0.7) 99%),
+                     url(https://www.ikea.com/global/en/images/PH_196231_0f92c9cc30.jpg?f=xxxl);
+                
+                /* background-image: url(https://www.ikea.com/global/en/images/PH_196231_0f92c9cc30.jpg?f=xxxl);
+                 */background-position: center center;
                 background-size:cover;
                 border-radius: 8px;
                 display: flex;
                 height: 75vh;
                 width: 100%;
                 align-items: flex-end;
-                box-shadow: inset 0px -10px 60px;
+                /* box-shadow: inset 0px -10px 60px; */
             }
             .h-box-content {
                 color: white;
@@ -86,8 +102,11 @@
                 padding-left: 16px;
                 padding-bottom: 16px;
             }
-
+            .h-box-text{
+                position:absolute;
+            }
             .h-box-title{
+                position: relative;
                 display: flex;
             }
             .h-box-icon {
@@ -102,6 +121,7 @@
                 display: flex;
             }
             .h-box:hover .h-box-text p{
+                
                 margin-left: 36px;
             }
             .h-box-icon img {
@@ -121,10 +141,10 @@
             <nav>
                 <section class="navlinks">
                     <a class="logo" href=""><img src="assets/ikea-logo.png" alt="logo ikea" /></a>
-                    <a class="nav-link" href="">Stories</a>
-                    <a class="nav-link" href="">Jobs</a>
-                    <a class="nav-link" href="">Newsroom</a>
-                    <a class="nav-link" href="">Our business</a>
+                    <a class="nav-link short" href="">Stories</a>
+                    <a class="nav-link short" href="">Jobs</a>
+                    <a class="nav-link large" href="">Newsroom</a>
+                    <a class="nav-link large" href="">Our business</a>
                 </section>
             </nav>
 
@@ -136,7 +156,7 @@
                             <div class="h-box-title">
                                 <div class="h-box-icon">
                                     <img
-                                        src="https://www.svgrepo.com/show/376370/arrow-right-line.svg"
+                                        src="/assets/arrow-right-line-white.svg"
                                         alt="arrow right"
                                     />
                                 </div>
@@ -153,7 +173,7 @@
                             <div class="h-box-title">
                                 <div class="h-box-icon">
                                     <img
-                                        src="https://www.svgrepo.com/show/376370/arrow-right-line.svg"
+                                        src="/assets/arrow-right-line-white.svg"
                                         alt="arrow right"
                                     />
                                 </div>
