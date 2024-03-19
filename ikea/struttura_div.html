@@ -5,12 +5,13 @@
         <meta charset="utf-8" />
         <meta name="author" content="Team B" />
         <meta name="description" content="HTML navbar exercise" />
+
         <link rel="stylesheet" href="css/styles.css" />
     </head>
     <body>
         <header>
             <nav>
-                <section class="navlinks">
+                <section class="nav-links">
                     <a class="logo" href=""
                         ><img src="assets/images/brand/ikea-logo.png" alt="logo ikea"
                     /></a>
@@ -23,6 +24,7 @@
         </header>
         <!-- inizio delle sezioni box -->
         <main>
+            <!-- box 1 e 2 setti -->
             <section class="box-container">
                 <!-- box 1 -->
                 <div
@@ -38,43 +40,50 @@
                         </div>
                     </div>
                 </div>
-                <div class="region-picker">
-                    <a class="website-link" href="https://www.ikea.com/it/it/" tabindex="0">
-                        <span class="go-shopping" aria-hidden="true">Go shopping</span>
-                        <span class="arrow-container svelte-1fcvnn">
-                            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="svelte-1iyybxb right">
-                            <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M4,12l8,8,1.41-1.41L7.83,13H20V11H7.83l5.59-5.59L12,4Z">
-                        </path></svg>
-                    </span>
-                    </a>
-                    <button class="pick svelte-1fcvnn" tabindex="0">
-                        <span class="picked-site svelte-1fcvnn">
-                            <span aria-hidden="true" class="svelte-1fcvnn">Store:
-                                <span class="site svelte-1fcvnn">ikea.it</span>
-                            </span>
-                            <span class="sr-only svelte-1fcvnn">Show more IKEA websites</span>
-                            <span class="chevron svelte-1fcvnn">
-                                <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svelte-1dofwfm use-transition up"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 1.38462L14.5455 0L8 6.23077L1.45455 0L0 1.38462L8 9L16 1.38462Z" fill="currentColor"></path></svg>
-                            </span>
-                        </span>
-                    </button>
-                </div>
+
                 <!-- box 2 -->
+                <div class="region-picker">
+                    <span class="region-picker-above">
+                        <a class="website-link" href="https://www.ikea.com/it/it/" tabindex="0">
+                            <span class="go-shopping" aria-hidden="true">
+                                Go shopping
+                                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="svelte right">
+                                    <path fill="currentColor" fill-rule="evenodd" d="M4,12l8,8,1.41-1.41L7.83,13H20V11H7.83l5.59-5.59L12,4Z"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </span>
+
+                    <span id="region-selector">
+                        <button class="pick" tabindex="0">
+                                <span aria-hidden="true" class="svelte">
+                                    Store: ikea.it
+                                </span>
+                                <span class="show-more">Show more IKEA websites</span>
+                                <svg width="16" height="9" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svelte"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 1.38462L14.5455 0L8 6.23077L1.45455 0L0 1.38462L8 9L16 1.38462Z" fill="currentColor"></path></svg>
+                        </button>
+                    </span>
+                </div>
             </section>
             <!-- sezione 2 (box 3-4)-->
             <section class="box-container">
                 <!-- box 3 -->
                 <div
                     class="h-box"
-                    style="background-image: url(assets/images/PH_196231_0f92c9cc30.avif)"
+                    style="background-image: url(assets/images/backgrounds/PH_196231_0f92c9cc30.avif)"
                 >
-                    <div class="h-box-content">
-                        <div class="h-box-icon">
-                            <img src="assets/images/icons/arrow_forward.svg" alt="arrow right" />
-                        </div>
-                        <div class="h-box-title">
-                            <p>IKEA storage school</p>
-                            <h2>A simple recipe for an organised kitchen</h2>
+                    <div class="bg-gradient">
+                        <div class="h-box-content">
+                            <div class="h-box-icon">
+                                <img
+                                    src="assets/images/icons/arrow_forward.svg"
+                                    alt="arrow right"
+                                />
+                            </div>
+                            <div class="h-box-title">
+                                <p>IKEA storage school</p>
+                                <h2>A simple recipe for an organised kitchen</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -83,7 +92,7 @@
                 <div
                     class="h-box"
                     style="
-                        background-image: url(assets/images/GC_LAH_Ai_RFY_24.avif);
+                        background-image: url(assets/images/backgrounds/GC_LAH_Ai_RFY_24.avif);
                     "
                 >
                     <div class="h-box-content">
@@ -102,15 +111,20 @@
             <section class="box-container">
                 <div
                     class="h-box"
-                    style="background-image: url(assets/images/PH_170976_2_0226e26e88.avif)"
+                    style="background-image: url(assets/images/backgrounds/PH_170976_2_0226e26e88.avif)"
                 >
-                    <div class="h-box-content">
-                        <div class="h-box-icon">
-                            <img src="assets/images/icons/arrow_forward.svg" alt="arrow right" />
-                        </div>
-                        <div class="h-box-title">
-                            <p>IKEA storage school</p>
-                            <h2>The ABCs of children's storage</h2>
+                    <div class="bg-gradient">
+                        <div class="h-box-content">
+                            <div class="h-box-icon">
+                                <img
+                                    src="assets/images/icons/arrow_forward.svg"
+                                    alt="arrow right"
+                                />
+                            </div>
+                            <div class="h-box-title">
+                                <p>IKEA storage school</p>
+                                <h2>The ABCs of children's storage</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
