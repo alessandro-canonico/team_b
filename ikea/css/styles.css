@@ -1,12 +1,12 @@
-:root {
-    --def-font: Roboto, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen,
-        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    --button-color: rgb(0, 123, 39);
-    font-family: var(--def-font);
-    --font-color: rgb(44, 44, 44);
+@import "root.css";
+
+img, svg {
+    display: block;
 }
+
 body {
-    margin: 0px;
+    margin: 0;
+    font-family: var(--ikea-font);
 }
 nav {
     display: flex;
@@ -15,7 +15,7 @@ nav {
     align-items: center;
     padding: 24px 8vw;
 }
-.navlinks {
+.nav-links {
     display: flex;
     align-items: center;
 }
@@ -40,7 +40,7 @@ nav {
     font-size: inherit;
     background-color: var(--nav-bg);
     border: 1px solid var(--button-color);
-    border-radius: 8px;
+    border-radius: var(--radius-def);
     padding: 8px 16px;
     color: var(--button-color);
 }
@@ -52,10 +52,7 @@ nav {
 /* inizio sezioni box */
 
 .box-container {
-    margin-top: 0;
-    margin-left: 8vw;
-    margin-right: 8vw;
-    margin-bottom: 16px;
+    margin: 0 8vw 16px;
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
@@ -70,6 +67,15 @@ nav {
     align-items: flex-end;
     flex-basis: 350px;
     flex-grow: 1;
+    text-decoration: none;
+}
+.bg-gradient {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, transparent 60%, rgba(42, 42, 42, 0.8));
+    border-radius: 8px;
 }
 .bg-gradient {
     display: flex;
@@ -82,14 +88,11 @@ nav {
 .h-box-content {
     color: white;
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     border-radius: 16px;
-    width: 100%;
     height: fit-content;
-    padding-top: 24px;
-    padding-left: 24px;
-    padding-bottom: 24px;
-    padding-right: 20%;
+    width: 100%;
+    padding: 24px 20% 24px 24px;
 }
 
 .h-box-title {
@@ -98,25 +101,78 @@ nav {
 }
 
 .h-box-icon {
-    margin-top: 16px;
-    width: 0px;
+    margin-top: 24px;
+    width: 0;
     height: auto;
     opacity: 0;
 }
 .h-box-icon img {
     height: 32px;
 }
-div.h-box-content h2 {
-    margin: 0px;
+.h-box-content h2 {
+    margin: 0;
 }
-div.h-box-content p {
-    margin: 0px;
+.h-box-content p {
+    margin: 0;
 }
 
-/* freccietta a comparsa */
+/* freccetta a comparsa */
 .h-box:hover .h-box-icon {
     transition: all 0.3s linear;
     opacity: 100%;
     width: fit-content;
     margin-right: 12px;
+}
+
+#h-box-1 {
+    background-image: url('../assets/images/backgrounds/PE_897524_680e4335ea.avif');
+}
+
+.website-link {
+    font-family: monospace;
+    color: black;
+    text-decoration: none;
+    text-transform: none;
+    font-weight: bolder;
+    font-size: 36px
+}
+
+/*francesco box2 go shopping section */
+.region-picker {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-ikea-yellow-hover);
+    padding: 0;
+    width: 25%;
+    letter-spacing: -0.96px;
+    line-height: 43px;
+    border-radius: var(--radius-def);
+/*    font-family: monospace;*/
+    justify-content: center;
+}
+
+.show-more {
+}
+
+.go-shopping {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+#region-selector {
+    min-height: 15%;
+    max-height: 15%;
+    background-color: var(--color-ikea-yellow);
+    display: flex;
+    justify-content: center;
+}
+
+.region-picker-above {
+    display: flex;
+    flex: 2 75%;
+    flex-direction: column;
+    justify-content: center;
+    /*text-align: center;*/
+    padding: 5%;
 }
