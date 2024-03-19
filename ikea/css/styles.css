@@ -2,11 +2,13 @@
     --def-font: Roboto, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen,
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     --button-color: rgb(0, 123, 39);
-    font-family: var(--def-font);
     --font-color: rgb(44, 44, 44);
+    --nav-bg: black;
+    --radius-def: 8px;
 }
 body {
-    margin: 0px;
+    margin: 0;
+    font-family: var(--def-font);
 }
 nav {
     display: flex;
@@ -40,7 +42,7 @@ nav {
     font-size: inherit;
     background-color: var(--nav-bg);
     border: 1px solid var(--button-color);
-    border-radius: 8px;
+    border-radius: var(--radius-def);
     padding: 8px 16px;
     color: var(--button-color);
 }
@@ -52,10 +54,7 @@ nav {
 /* inizio sezioni box */
 
 .box-container {
-    margin-top: 0;
-    margin-left: 8vw;
-    margin-right: 8vw;
-    margin-bottom: 16px;
+    margin: 0 8vw 16px;
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
@@ -68,7 +67,7 @@ nav {
     height: 75vh;
     width: 100%;
     align-items: flex-end;
-    box-shadow: inset 0px -25px 60px;
+    box-shadow: inset 0 -25px 60px;
     flex-basis: 350px;
     flex-grow: 1;
 }
@@ -91,24 +90,45 @@ nav {
 
 .h-box-icon {
     margin-top: 16px;
-    width: 0px;
+    width: 0;
     height: auto;
     opacity: 0;
 }
 .h-box-icon img {
     height: 32px;
 }
-div.h-box-content h2 {
-    margin: 0px;
+.h-box-content h2 {
+    margin: 0;
 }
-div.h-box-content p {
-    margin: 0px;
+.h-box-content p {
+    margin: 0;
 }
 
-/* freccietta a comparsa */
+/* freccetta a comparsa */
 .h-box:hover .h-box-icon {
     transition: all 0.3s linear;
     opacity: 100%;
     width: fit-content;
     margin-right: 12px;
+}
+
+#h-box-1 {
+    background-image: url('../assets/images/PE_897524_680e4335ea.avif');
+}
+
+.website-link {
+    font-family: monospace;
+    color: black;
+    text-decoration: none;
+    text-transform: none;
+    font-weight: bolder;
+    font-size: 36px
+}
+
+.region-picker {
+    background: bisque;
+    padding: 50px;
+    width: 25%;
+    border-radius: var(--radius-def);
+
 }
