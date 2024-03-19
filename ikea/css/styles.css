@@ -100,6 +100,10 @@ nav {
     align-items: flex-start;
 }
 
+.h-box-title-black {
+    color: var(--color-text-black)
+}
+
 .h-box-icon {
     margin-top: 24px;
     width: 0;
