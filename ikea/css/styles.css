@@ -68,17 +68,25 @@ nav {
     height: 75vh;
     width: 100%;
     align-items: flex-end;
-    box-shadow: inset 0px -25px 60px;
     flex-basis: 350px;
     flex-grow: 1;
+}
+.bg-gradient {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, transparent 60%, rgba(42, 42, 42, 0.8));
+    border-radius: 8px;
 }
 .h-box-content {
     color: white;
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     border-radius: 16px;
-    height: fit-content;
     width: 100%;
+    height: fit-content;
+    padding-top: 24px;
     padding-left: 24px;
     padding-bottom: 24px;
     padding-right: 20%;
