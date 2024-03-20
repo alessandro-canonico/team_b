@@ -69,6 +69,45 @@ nav {
     flex-grow: 1;
     text-decoration: none;
 }
+
+
+/*inizio CSS box di media altezza (tipo le ultime 2) */
+.h-box-low{
+    background-position: center center;
+    background-size: cover;
+    border-radius: 8px;
+    display: flex;
+    height: 65vh;
+    width: 100%;
+    align-items: flex-end;
+    flex-basis: 350px;
+    flex-grow: 1;
+    text-decoration: none;
+}
+/*fine CSS box di media altezza (tipo le ultime 2) */
+
+
+/* inizio CSS per le box con video bg */
+.v-box{
+    display: flex;
+    height: 75vw;
+    width: 100%;
+    border-radius: 12px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+.v-box video {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.v-box .bg-gradient {
+    position: relative;
+}
+/* fine CSS per le box con video bg */
+
 .bg-gradient {
     display: flex;
     align-items: flex-end;
@@ -116,13 +155,27 @@ nav {
     margin: 0;
 }
 
-/* freccetta a comparsa */
+/* Inizio CSS freccetta a comparsa */
 .h-box:hover .h-box-icon {
     transition: all 0.3s linear;
     opacity: 100%;
     width: fit-content;
     margin-right: 12px;
 }
+.v-box:hover .h-box-icon {
+    transition: all 0.3s linear;
+    opacity: 100%;
+    width: fit-content;
+    margin-right: 12px;
+}
+.h-box-low:hover .h-box-icon {
+    transition: all 0.3s linear;
+    opacity: 100%;
+    width: fit-content;
+    margin-right: 12px;
+}
+/* Fine CSS freccetta a comparsa */
+
 
 #h-box-1 {
     background-image: url('../assets/images/backgrounds/PE_897524_680e4335ea.avif');
