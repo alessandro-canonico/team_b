@@ -115,7 +115,7 @@ nav {
     align-items: flex-end;
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(to bottom, transparent 60%, rgba(42, 42, 42, 0.8));
+    background-image: linear-gradient(to bottom, transparent 60%, rgb(0, 0, 0));
     border-radius: 8px;
 }
 .bg-gradient {
@@ -123,7 +123,7 @@ nav {
     align-items: flex-end;
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(to bottom, transparent 60%, rgba(42, 42, 42, 0.8));
+    background-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.6));
     border-radius: 8px;
 }
 .h-box-content {
@@ -152,6 +152,7 @@ nav {
 }
 .h-box-content h2 {
     margin: 0;
+    font-size: 2.2rem;
 }
 .h-box-content p {
     margin: 0;
