@@ -29,10 +29,10 @@ nav {
 .nav-link:hover {
     font-weight: bold;
 }
-.logo img {
-    height: 32px;
+.logo svg {
     margin-right: 12px;
 }
+
 .button {
     display: inline-block;
     box-sizing: border-box;
