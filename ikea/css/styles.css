@@ -8,25 +8,33 @@ svg {
 body {
     margin: 0;
     font-family: var(--ikea-font);
+    background-color: var(--color-background);
 }
 
 /*--- inizio nav e propri contenuti*/
-nav {
+nav{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 24px 8vw;
+    justify-content: center;
+}
+.nav-container {
+    display: flex;
+    box-sizing: border-box;
+    margin: 0 24px;
+    width: 100%;
+    max-width: var(--box-container-max-width);
 }
 .nav-links {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
+    padding: 32px 0;
 }
 .nav-link {
     display: flex;
     text-decoration: none;
     color: var(--font-color);
     padding: 8px 12px;
+    color: var(--color-text-darker);
 }
 .nav-link:hover {
     font-weight: bold;
@@ -36,30 +44,39 @@ nav {
 }
 /*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.sections-container {
+    width: 100%;
+    max-width: var(--box-container-max-width);
+    margin: 0px 24px;
+}
 /* ---- inizio sezioni e box ----- ----*/
 .box-container {
     display: flex;
-    flex-wrap: wrap; /*da togliere quando mettiamo emdia query*/
-    gap: 16px;
-    height: fit-content;
-    margin: 0 8vw 16px;
+    gap: var(--box-gap);
+    margin-bottom: var(--box-gap);
 }
 
 /*---- inizio box con immagini di bg ---- ---- ----*/
-.h-box, .h-box-low {
+.h-box,
+.h-box-low {
     display: flex;
     align-items: flex-end;
-    flex-basis: 350px; /*da togliere quando aggiungiamo le media query*/
-    flex-grow: 1;
-    height: 45vw;
-    border-radius: 8px;
+    width: 100%;
+    height: var(--box-height-def);
+    max-height: calc(var(--box-container-max-width) / 2 * 1.05);
+    border-radius: var(--border-radius-def);
     background-position: center center;
     background-size: cover;
     text-decoration: none;
     overflow: hidden;
 }
 .h-box-low {
-    height: 35vw;
+    height: var(--box-height-low);
 }
 /*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
@@ -67,20 +84,20 @@ nav {
 /*contenitore*/
 .v-box {
     display: flex;
-    flex-basis: 350px;
-    flex-grow: 1;
+    width: 100%;
     height: 40vw;
+    max-height: calc(var(--box-container-max-width) / 2 * 1.05);
     position: relative;
-    border-radius: 12px;
+    border-radius: var(--border-radius-def);
     text-decoration: none;
     overflow: hidden;
 }
 /*video*/
 .v-box video {
     position: absolute;
-    width: 100%;
     left: 50%;
     top: 50%;
+    width: calc( 90vw / 1.8);
     transform: translate(-50%, -50%);
 }
 /*gradiente semi-trasparente*/
@@ -97,7 +114,7 @@ nav {
     height: 100%;
     width: 100%;
     border-radius: 8px;
-    background-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.6));
+    background-image: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.6));
 }
 /*sopratitolo, titolo e freccetta*/
 .h-box-content {
@@ -105,7 +122,6 @@ nav {
     align-items: flex-start;
     height: fit-content;
     width: 100%;
-    border-radius: 16px;
     padding: 24px 10% 24px 24px;
     color: white; /* aggiungere variabili font-color-light e font-color-dark */
     transition: 500ms transform ease;
@@ -184,7 +200,7 @@ nav {
     width: 25%;
     letter-spacing: -0.96px;
     line-height: 43px;
-    border-radius: var(--radius-def);
+    border-radius: var(--border-radius-def);
     /*    font-family: monospace;*/
     justify-content: center;
 }
