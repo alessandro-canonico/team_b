@@ -126,7 +126,7 @@ nav {
     border-radius: 16px;
     padding: 24px 10% 24px 24px;
     color: white; /* aggiungere variabili font-color-light e font-color-dark */
-    transition: 350ms transform ease-out;
+    transition: 500ms transform ease;
     transform: translateX(-64px);
 }
 
@@ -136,12 +136,13 @@ nav {
 }
 
 .h-box-icon {
-    margin-top: 16px;
+    margin-top: 1rem;
     width: auto;
     height: auto;
     margin-right: 16px;
     opacity: 0;
-    transition: 350ms linear;
+    transition: 400ms ease;
+    transform: translateX(-5rem);
 }
 .h-box-icon img {
     height: 48px;
@@ -161,6 +162,7 @@ nav {
     transform: translateX(0);
 }
 .h-box:hover .h-box-icon {
+    transform: translate(0);
     opacity: 100%;
 }
 .h-box-low:hover .h-box-content {
