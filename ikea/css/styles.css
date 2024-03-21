@@ -169,12 +169,14 @@ nav {
     transform: translateX(0);
 }
 .h-box-low:hover .h-box-icon {
+    transform: translate(0);
     opacity: 100%;
 }
 .v-box:hover .h-box-content {
     transform: translateX(0);
 }
 .v-box:hover .h-box-icon {
+    transform: translate(0);
     opacity: 100%;
 }
 /* Fine CSS freccetta a comparsa */
