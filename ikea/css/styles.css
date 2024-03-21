@@ -9,6 +9,8 @@ body {
     margin: 0;
     font-family: var(--ikea-font);
 }
+
+/*--- inizio nav e propri contenuti*/
 nav {
     display: flex;
     flex-wrap: wrap;
@@ -32,26 +34,9 @@ nav {
 .logo svg {
     margin-right: 12px;
 }
+/*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
-.button {
-    display: inline-block;
-    box-sizing: border-box;
-    height: 48px;
-    padding: 8px 16px;
-    border-radius: var(--radius-def);
-    border: 1px solid var(--button-color);
-    background-color: var(--nav-bg);
-    color: var(--button-color);
-    font-family: inherit;
-    font-size: inherit;
-}
-.button:hover {
-    color: white;
-    background-color: var(--button-color);
-}
-
-/* inizio sezioni box */
-
+/* ---- inizio sezioni e box ----- ----*/
 .box-container {
     display: flex;
     flex-wrap: wrap; /*da togliere quando mettiamo emdia query*/
@@ -59,7 +44,9 @@ nav {
     height: fit-content;
     margin: 0 8vw 16px;
 }
-.h-box {
+
+/*---- inizio box con immagini di bg ---- ---- ----*/
+.h-box, .h-box-low {
     display: flex;
     align-items: flex-end;
     flex-basis: 350px; /*da togliere quando aggiungiamo le media query*/
@@ -71,23 +58,13 @@ nav {
     text-decoration: none;
     overflow: hidden;
 }
-
-/*inizio CSS box basse (tipo le ultime 2) */
 .h-box-low {
-    display: flex;
-    align-items: flex-end;
-    flex-basis: 350px; /*da togliere quando aggiungiamo le media query*/
-    flex-grow: 1;
     height: 35vw;
-    border-radius: 8px;
-    background-position: center center;
-    background-size: cover;
-    text-decoration: none;
-    overflow: hidden;
 }
-/*fine CSS box basse (tipo le ultime 2) */
+/*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
-/* inizio CSS per le box con video bg */
+/* ---- inizio box con video bg ---- ---- ---- */
+/*contenitore*/
 .v-box {
     display: flex;
     flex-basis: 350px;
@@ -98,6 +75,7 @@ nav {
     text-decoration: none;
     overflow: hidden;
 }
+/*video*/
 .v-box video {
     position: absolute;
     width: 100%;
@@ -105,11 +83,14 @@ nav {
     top: 50%;
     transform: translate(-50%, -50%);
 }
+/*gradiente semi-trasparente*/
 .v-box .bg-gradient {
     position: relative;
 }
-/* fine CSS per le box con video bg */
+/*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
+/*---- inizio contenuti box (uguale per le box con video e immagini) ---- ---- ----*/
+/*gradiente semi trasparente (sopra lo sfondo, ma dietro il testo)*/
 .bg-gradient {
     display: flex;
     align-items: flex-end;
@@ -118,6 +99,7 @@ nav {
     border-radius: 8px;
     background-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.6));
 }
+/*sopratitolo, titolo e freccetta*/
 .h-box-content {
     display: flex;
     align-items: flex-start;
@@ -129,23 +111,10 @@ nav {
     transition: 500ms transform ease;
     transform: translateX(-64px);
 }
-
+/*titolo e sopratitolo*/
 .h-box-title {
     height: fit-content;
     align-items: flex-start;
-}
-
-.h-box-icon {
-    margin-top: 1rem;
-    width: auto;
-    height: auto;
-    margin-right: 16px;
-    opacity: 0;
-    transition: 400ms ease;
-    transform: translateX(-5rem);
-}
-.h-box-icon img {
-    height: 48px;
 }
 .h-box-content h2 {
     font-size: 2.2rem;
@@ -157,7 +126,23 @@ nav {
     text-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
 }
 
-/* Inizio CSS freccetta a comparsa */
+/*contenitore freccetta*/
+.h-box-icon {
+    margin-top: 1rem;
+    width: auto;
+    height: auto;
+    margin-right: 16px;
+    opacity: 0;
+    transition: 400ms ease;
+    transform: translateX(-5rem);
+}
+/*freccetta*/
+.h-box-icon img {
+    height: 48px;
+}
+/*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
+
+/* ---- Inizio CSS freccetta a comparsa ---- ---- ---- */
 .h-box:hover .h-box-content {
     transform: translateX(0);
 }
@@ -179,11 +164,7 @@ nav {
     transform: translate(0);
     opacity: 100%;
 }
-/* Fine CSS freccetta a comparsa */
-
-#h-box-1 {
-    background-image: url("../assets/images/backgrounds/PE_897524_680e4335ea.avif");
-}
+/*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
 .website-link {
     font-family: monospace;
@@ -208,7 +189,7 @@ nav {
     justify-content: center;
 }
 
-/* commendato perchè vscode lo rilevava come problema
+/* commendato perchè vscode lo rilevava come erroe
 .show-more {
 }
 */
