@@ -1,6 +1,7 @@
 @import "root.css";
 
-img, svg {
+img,
+svg {
     display: block;
 }
 
@@ -33,16 +34,16 @@ nav {
     margin-right: 12px;
 }
 .button {
-    height: 48px;
     display: inline-block;
     box-sizing: border-box;
+    height: 48px;
+    padding: 8px 16px;
+    border-radius: var(--radius-def);
+    border: 1px solid var(--button-color);
+    background-color: var(--nav-bg);
+    color: var(--button-color);
     font-family: inherit;
     font-size: inherit;
-    background-color: var(--nav-bg);
-    border: 1px solid var(--button-color);
-    border-radius: var(--radius-def);
-    padding: 8px 16px;
-    color: var(--button-color);
 }
 .button:hover {
     color: white;
@@ -52,58 +53,57 @@ nav {
 /* inizio sezioni box */
 
 .box-container {
-    margin: 0 8vw 16px;
     display: flex;
-    height: fit-content;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /*da togliere quando mettiamo emdia query*/
     gap: 16px;
+    height: fit-content;
+    margin: 0 8vw 16px;
 }
 .h-box {
-    background-position: center center;
-    background-size: cover;
-    border-radius: 8px;
     display: flex;
+    align-items: flex-end;
+    flex-basis: 350px; /*da togliere quando aggiungiamo le media query*/
+    flex-grow: 1;
     height: 45vw;
-    align-items: flex-end;
-    flex-basis: 350px;
-    flex-grow: 1;
-    text-decoration: none;
-}
-
-
-/*inizio CSS box di media altezza (tipo le ultime 2) */
-.h-box-low{
+    border-radius: 8px;
     background-position: center center;
     background-size: cover;
-    border-radius: 8px;
-    display: flex;
-    height: 35vw;
-    align-items: flex-end;
-    flex-basis: 350px;
-    flex-grow: 1;
     text-decoration: none;
+    overflow: hidden;
 }
-/*fine CSS box di media altezza (tipo le ultime 2) */
 
+/*inizio CSS box basse (tipo le ultime 2) */
+.h-box-low {
+    display: flex;
+    align-items: flex-end;
+    flex-basis: 350px; /*da togliere quando aggiungiamo le media query*/
+    flex-grow: 1;
+    height: 35vw;
+    border-radius: 8px;
+    background-position: center center;
+    background-size: cover;
+    text-decoration: none;
+    overflow: hidden;
+}
+/*fine CSS box basse (tipo le ultime 2) */
 
 /* inizio CSS per le box con video bg */
-.v-box{
+.v-box {
     display: flex;
-    height: 40vw;
-    border-radius: 12px;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
     flex-basis: 350px;
     flex-grow: 1;
-
+    height: 40vw;
+    position: relative;
+    border-radius: 12px;
+    text-decoration: none;
+    overflow: hidden;
 }
 .v-box video {
     position: absolute;
     width: 100%;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 }
 .v-box .bg-gradient {
     position: relative;
@@ -115,17 +115,19 @@ nav {
     align-items: flex-end;
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.60));
     border-radius: 8px;
+    background-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.6));
 }
 .h-box-content {
-    color: white;
     display: flex;
     align-items: flex-start;
-    border-radius: 16px;
     height: fit-content;
     width: 100%;
-    padding: 24px 25% 24px 24px;
+    border-radius: 16px;
+    padding: 24px 10% 24px 24px;
+    color: white; /* aggiungere variabili font-color-light e font-color-dark */
+    transition: 350ms transform ease-out;
+    transform: translateX(-64px);
 }
 
 .h-box-title {
@@ -134,18 +136,20 @@ nav {
 }
 
 .h-box-icon {
-    margin-top: 24px;
-    width: 0;
+    margin-top: 16px;
+    width: auto;
     height: auto;
+    margin-right: 16px;
     opacity: 0;
+    transition: 350ms linear;
 }
 .h-box-icon img {
     height: 48px;
 }
 .h-box-content h2 {
-    margin: 0;
     font-size: 2.2rem;
-    line-height: 120%
+    margin: 0;
+    line-height: 120%;
 }
 .h-box-content p {
     margin: 0;
@@ -153,29 +157,28 @@ nav {
 }
 
 /* Inizio CSS freccetta a comparsa */
-.h-box:hover .h-box-icon {
-    transition: all 0.3s linear;
-    opacity: 100%;
-    width: fit-content;
-    margin-right: 12px;
+.h-box:hover .h-box-content {
+    transform: translateX(0);
 }
-.v-box:hover .h-box-icon {
-    transition: all 0.3s linear;
+.h-box:hover .h-box-icon {
     opacity: 100%;
-    width: fit-content;
-    margin-right: 12px;
+}
+.h-box-low:hover .h-box-content {
+    transform: translateX(0);
 }
 .h-box-low:hover .h-box-icon {
-    transition: all 0.3s linear;
     opacity: 100%;
-    width: fit-content;
-    margin-right: 12px;
+}
+.v-box:hover .h-box-content {
+    transform: translateX(0);
+}
+.v-box:hover .h-box-icon {
+    opacity: 100%;
 }
 /* Fine CSS freccetta a comparsa */
 
-
 #h-box-1 {
-    background-image: url('../assets/images/backgrounds/PE_897524_680e4335ea.avif');
+    background-image: url("../assets/images/backgrounds/PE_897524_680e4335ea.avif");
 }
 
 .website-link {
@@ -184,7 +187,7 @@ nav {
     text-decoration: none;
     text-transform: none;
     font-weight: bolder;
-    font-size: 36px
+    font-size: 36px;
 }
 
 /*francesco box2 go shopping section */
@@ -197,7 +200,7 @@ nav {
     letter-spacing: -0.96px;
     line-height: 43px;
     border-radius: var(--radius-def);
-/*    font-family: monospace;*/
+    /*    font-family: monospace;*/
     justify-content: center;
 }
 
