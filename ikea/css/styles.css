@@ -95,7 +95,7 @@ main {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: calc( 90vw / 2);
+    width: calc( 90vw / 1.8);
     transform: translate(-50%, -50%);
 }
 /*gradiente semi-trasparente*/
