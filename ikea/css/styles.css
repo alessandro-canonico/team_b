@@ -1,6 +1,7 @@
 @import "root.css";
 
-img, svg {
+img,
+svg {
     display: block;
 }
 
@@ -8,6 +9,8 @@ body {
     margin: 0;
     font-family: var(--ikea-font);
 }
+
+/*--- inizio nav e propri contenuti*/
 nav {
     display: flex;
     flex-wrap: wrap;
@@ -28,106 +31,140 @@ nav {
 .nav-link:hover {
     font-weight: bold;
 }
-.logo img {
-    height: 32px;
+.logo svg {
     margin-right: 12px;
 }
-.button {
-    height: 48px;
-    display: inline-block;
-    box-sizing: border-box;
-    font-family: inherit;
-    font-size: inherit;
-    background-color: var(--nav-bg);
-    border: 1px solid var(--button-color);
-    border-radius: var(--radius-def);
-    padding: 8px 16px;
-    color: var(--button-color);
-}
-.button:hover {
-    color: white;
-    background-color: var(--button-color);
-}
+/*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
-/* inizio sezioni box */
-
+/* ---- inizio sezioni e box ----- ----*/
 .box-container {
-    margin: 0 8vw 16px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /*da togliere quando mettiamo emdia query*/
     gap: 16px;
+    height: fit-content;
+    margin: 0 8vw 16px;
 }
-.h-box {
+
+/*---- inizio box con immagini di bg ---- ---- ----*/
+.h-box, .h-box-low {
+    display: flex;
+    align-items: flex-end;
+    flex-basis: 350px; /*da togliere quando aggiungiamo le media query*/
+    flex-grow: 1;
+    height: 45vw;
+    border-radius: 8px;
     background-position: center center;
     background-size: cover;
-    border-radius: 8px;
+    text-decoration: none;
+    overflow: hidden;
+}
+.h-box-low {
+    height: 35vw;
+}
+/*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
+
+/* ---- inizio box con video bg ---- ---- ---- */
+/*contenitore*/
+.v-box {
     display: flex;
-    height: 75vh;
-    width: 100%;
-    align-items: flex-end;
     flex-basis: 350px;
     flex-grow: 1;
+    height: 40vw;
+    position: relative;
+    border-radius: 12px;
     text-decoration: none;
+    overflow: hidden;
 }
+/*video*/
+.v-box video {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+/*gradiente semi-trasparente*/
+.v-box .bg-gradient {
+    position: relative;
+}
+/*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
+
+/*---- inizio contenuti box (uguale per le box con video e immagini) ---- ---- ----*/
+/*gradiente semi trasparente (sopra lo sfondo, ma dietro il testo)*/
 .bg-gradient {
     display: flex;
     align-items: flex-end;
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(to bottom, transparent 60%, rgba(42, 42, 42, 0.8));
     border-radius: 8px;
+    background-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.6));
 }
-.bg-gradient {
-    display: flex;
-    align-items: flex-end;
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(to bottom, transparent 60%, rgba(42, 42, 42, 0.8));
-    border-radius: 8px;
-}
+/*sopratitolo, titolo e freccetta*/
 .h-box-content {
-    color: white;
     display: flex;
     align-items: flex-start;
-    border-radius: 16px;
     height: fit-content;
     width: 100%;
-    padding: 24px 20% 24px 24px;
+    border-radius: 16px;
+    padding: 24px 10% 24px 24px;
+    color: white; /* aggiungere variabili font-color-light e font-color-dark */
+    transition: 500ms transform ease;
+    transform: translateX(-64px);
 }
-
+/*titolo e sopratitolo*/
 .h-box-title {
     height: fit-content;
     align-items: flex-start;
 }
-
-
-.h-box-icon {
-    margin-top: 24px;
-    width: 0;
-    height: auto;
-    opacity: 0;
-}
-.h-box-icon img {
-    height: 32px;
-}
 .h-box-content h2 {
+    font-size: 2.2rem;
     margin: 0;
+    line-height: 120%;
 }
 .h-box-content p {
     margin: 0;
+    text-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
 }
 
-/* freccetta a comparsa */
+/*contenitore freccetta*/
+.h-box-icon {
+    margin-top: 1rem;
+    width: auto;
+    height: auto;
+    margin-right: 16px;
+    opacity: 0;
+    transition: 400ms ease;
+    transform: translateX(-5rem);
+}
+/*freccetta*/
+.h-box-icon img {
+    height: 48px;
+}
+/*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
+
+/* ---- Inizio CSS freccetta a comparsa ---- ---- ---- */
+.h-box:hover .h-box-content {
+    transform: translateX(0);
+}
 .h-box:hover .h-box-icon {
-    transition: all 0.3s linear;
+    transform: translate(0);
     opacity: 100%;
-    width: fit-content;
-    margin-right: 12px;
 }
-
-#h-box-1 {
-    background-image: url('../assets/images/backgrounds/PE_897524_680e4335ea.avif');
+.h-box-low:hover .h-box-content {
+    transform: translateX(0);
 }
+.h-box-low:hover .h-box-icon {
+    transform: translate(0);
+    opacity: 100%;
+}
+.v-box:hover .h-box-content {
+    transform: translateX(0);
+}
+.v-box:hover .h-box-icon {
+    transform: translate(0);
+    opacity: 100%;
+}
+/*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
 .website-link {
     font-family: monospace;
@@ -135,7 +172,7 @@ nav {
     text-decoration: none;
     text-transform: none;
     font-weight: bolder;
-    font-size: 36px
+    font-size: 36px;
 }
 
 /*francesco box2 go shopping section */
@@ -148,12 +185,14 @@ nav {
     letter-spacing: -0.96px;
     line-height: 43px;
     border-radius: var(--radius-def);
-/*    font-family: monospace;*/
+    /*    font-family: monospace;*/
     justify-content: center;
 }
 
+/* commendato perchè vscode lo rilevava come erroe
 .show-more {
 }
+*/
 
 .go-shopping {
     display: flex;
