@@ -6,6 +6,9 @@
     --font-color: rgb(44, 44, 44);
     --nav-bg: black;
     --radius-def: 8px;
+    --box-container-max-width: 90rem;
+    --box-gap: 1.25rem;
+
 
     /*colori ikea ufficiali*/
     --color-logo: #fae6e6;
