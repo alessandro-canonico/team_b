@@ -12,14 +12,14 @@ body {
 }
 
 /*--- inizio nav e propri contenuti*/
-nav{
+nav {
     display: flex;
     justify-content: center;
 }
 .nav-container {
     display: flex;
     box-sizing: border-box;
-    margin: 0 24px;
+    padding: 0 24px;
     width: 100%;
     max-width: var(--box-container-max-width);
 }
@@ -50,15 +50,19 @@ main {
 }
 
 .sections-container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     width: 100%;
     max-width: var(--box-container-max-width);
-    padding: 0px var(--container-spacing-desktop);
+    padding: 0 24px;
 }
 /* ---- inizio sezioni e box ----- ----*/
 .box-container {
     display: flex;
     gap: var(--box-gap);
     margin-bottom: var(--box-gap);
+    width: inherit;
 }
 
 /*---- inizio box con immagini di bg ---- ---- ----*/
@@ -192,6 +196,136 @@ main {
     font-weight: bolder;
     font-size: 36px;
 }
+
+/* ------- inizio CSS carosello ----------*/
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: var(--carousel-height);
+    max-height: calc(var(--box-container-max-width) / 4);
+    padding: 3.75rem;
+    border-radius: var(--border-radius-def);
+    overflow: hidden;
+}
+/* contenitore di testo e galleria */
+.carousel-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+/* testo */
+.carousel-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    max-width: 30%;
+    margin-right: 1.75em;
+}
+.carousel-text h2,
+p {
+    margin: 0;
+    padding: 0;
+}
+.carousel-text h2 {
+    font-size: 2.25rem;
+    line-height: 120%;
+}
+.carousel-text p {
+    line-height: 180%;
+}
+
+/* galleria */
+.carousel-gallery {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    margin-left: 1.75rem;
+}
+.carousel-gallery-cards {
+    display: flex;
+    align-items: center;
+    width: calc(var(--box-container-max-width) * 0.175 * 3 + 32px);
+    height: fit-content;
+    gap: 16px;
+    overflow-y: hidden;
+}
+
+.carousel-gallery-cards::-webkit-scrollbar {
+    height: 16px;
+    border-top: 3px solid white;
+}
+.carousel-gallery-cards::-webkit-scrollbar-thumb:horizontal {
+    border-top: 3px solid black;
+}
+
+.carousel-gallery .button-right, .button-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.75rem;
+    width: 3.75rem;
+    border-radius: 3.75rem;
+    background-color: black;
+    position: absolute;
+    right: calc(3.75rem / 2 * -1);
+    border: none;
+}
+.carousel-gallery .button-left {
+    left: calc(3.75rem / 2 * -1);
+}
+
+.button-right img, .button-left img{
+    height: 24px;
+    width: 24px;
+}
+
+.carousel-card {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    height: 340px;
+    margin-bottom: 16px;
+    width: calc(var(--box-container-max-width) * 0.175);
+    border-radius: var(--border-radius-def);
+    background-color: var(--color-background);
+    overflow: hidden;
+}
+.carousel-card img {
+    height: 20%;
+    flex-grow: 1;
+    object-fit: cover;
+}
+.carousel-card video {
+    height: 20%;
+    flex-grow: 1;
+    object-fit: cover;
+}
+.carousel-card section {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding: 16px;
+}
+.carousel-card section h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+.carousel-card section h3 {
+    font-size: 1rem;
+}
+.carousel-card section p {
+    font-size: 0.85rem;
+}
+
+/* ------- fine CSS carosello ----------*/
 
 /*francesco box2 go shopping section */
 .region-picker {
