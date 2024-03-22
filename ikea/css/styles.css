@@ -203,7 +203,8 @@ main {
     display: flex;
     align-items: center;
     width: 100%;
-    height: var(--carousel-height);
+    height: fit-content;
+    max-height: var(--carousel-height);
     max-height: calc(var(--box-container-max-width) / 4);
     padding: 3.75rem;
     border-radius: var(--border-radius-def);
@@ -249,8 +250,9 @@ p {
     margin-left: 1.75rem;
 }
 .carousel-gallery-cards {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns:calc(var(--box-container-max-width) * 0.175) ;
     width: calc(var(--box-container-max-width) * 0.175 * 3 + 32px);
     height: fit-content;
     gap: 16px;
@@ -300,7 +302,6 @@ p {
     box-sizing: border-box;
     height: 340px;
     margin-bottom: 16px;
-    width: calc(var(--box-container-max-width) * 0.175);
     border-radius: var(--border-radius-def);
     background-color: var(--color-background);
     overflow: hidden;
@@ -335,6 +336,10 @@ p {
 .carousel2-container .carousel-content .carousel-gallery .carousel-gallery-cards .carousel-card section{ 
     height: 20%;
 }
+.carousel2-container .carousel-content .carousel-text h2 {
+    font-size: 3.175rem;
+    line-height: 115%;
+} 
 
 
 
