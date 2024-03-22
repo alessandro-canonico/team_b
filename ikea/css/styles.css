@@ -85,7 +85,7 @@ main {
 .v-box {
     display: flex;
     width: 100%;
-    height: 40vw;
+    min-height: var(--box-height-def);
     max-height: calc(var(--box-container-max-width) / 2 * 1.05);
     position: relative;
     border-radius: var(--border-radius-def);
