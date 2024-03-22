@@ -199,7 +199,7 @@ main {
 
 /* ------- inizio CSS carosello ----------*/
 
-.carousel-container {
+.carousel-container, .carousel2-container {
     display: flex;
     align-items: center;
     width: 100%;
@@ -222,6 +222,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 0.625rem;
+    min-width: 350px;
     max-width: 30%;
     margin-right: 1.75em;
 }
@@ -254,7 +255,14 @@ p {
     height: fit-content;
     gap: 16px;
     overflow-y: hidden;
+    overflow-x: scroll;
 }
+    /*
+    può tornare utile per lo scroll con i bottoni :
+        .carousel-gallery-cards { scroll-snap-type: inline mandatory;}
+        .carousel-gallery-cards > * { scroll-snap-align: start;} 
+    */
+
 
 .carousel-gallery-cards::-webkit-scrollbar {
     height: 16px;
@@ -311,7 +319,7 @@ p {
     display: flex;
     flex-direction: column;
     height: fit-content;
-    padding: 16px;
+    padding: 16px 8px 16px 16px;
 }
 .carousel-card section h3,
 p {
@@ -324,6 +332,11 @@ p {
 .carousel-card section p {
     font-size: 0.85rem;
 }
+.carousel2-container .carousel-content .carousel-gallery .carousel-gallery-cards .carousel-card section{ 
+    height: 20%;
+}
+
+
 
 /* ------- fine CSS carosello ----------*/
 
