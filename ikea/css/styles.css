@@ -52,7 +52,7 @@ main {
 .sections-container {
     width: 100%;
     max-width: var(--box-container-max-width);
-    margin: 0px 24px;
+    padding: 0px var(--container-spacing-desktop);
 }
 /* ---- inizio sezioni e box ----- ----*/
 .box-container {
@@ -68,7 +68,7 @@ main {
     align-items: flex-end;
     width: 100%;
     height: var(--box-height-def);
-    max-height: calc(var(--box-container-max-width) / 2 * 1.05);
+    max-height: calc(var(--box-container-max-width) / 2 * 1.07);
     border-radius: var(--border-radius-def);
     background-position: center center;
     background-size: cover;
@@ -77,6 +77,7 @@ main {
 }
 .h-box-low {
     height: var(--box-height-low);
+    max-height: calc(var(--box-container-max-width) / 2);
 }
 /*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
@@ -85,8 +86,8 @@ main {
 .v-box {
     display: flex;
     width: 100%;
-    min-height: var(--box-height-def);
-    max-height: calc(var(--box-container-max-width) / 2 * 1.05);
+    height: var(--box-height-def);
+    max-height: calc(var(--box-container-max-width) / 2 * 1.07);
     position: relative;
     border-radius: var(--border-radius-def);
     text-decoration: none;
@@ -97,7 +98,8 @@ main {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: calc( 90vw / 1.8);
+    height: var(--box-height-def);
+    max-height: calc(var(--box-container-max-width) / 2 * 1.1);
     transform: translate(-50%, -50%);
 }
 /*gradiente semi-trasparente*/

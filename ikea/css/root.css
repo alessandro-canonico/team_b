@@ -4,10 +4,12 @@
     --button-color: rgb(0, 123, 39);
     --nav-bg: black;
     --border-radius-def: 8px;
-    --box-container-max-width: 90rem;
+    --box-container-max-width: 88rem;
     --box-gap: 1.25rem;
-    --box-height-def: 45vw;
-    --box-height-low: 35vw;
+    --box-height-high: 52vw;
+    --box-height-def: 47vw;
+    --box-height-low: 40vw;
+    --container-spacing-desktop: 1.5rem;
 
 
     /*colori ikea ufficiali*/
