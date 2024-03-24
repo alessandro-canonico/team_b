@@ -6,7 +6,7 @@ svg {
 }
 
 body {
-    margin: 0;
+    margin: 16px;
     font-family: var(--ikea-font);
     background-color: var(--color-background);
 }
@@ -14,30 +14,49 @@ body {
 /*--- inizio nav e propri contenuti*/
 nav{
     display: flex;
+    margin: 0px 0px 8px 0px;
     justify-content: center;
+    border: 1px dashed red
 }
 .nav-container {
     display: flex;
-    box-sizing: border-box;
-    margin: 0 24px;
+    margin: 8px 24px 24px;
     width: 100%;
     max-width: var(--box-container-max-width);
+    border: 2px dotted black;
 }
 .nav-links {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    padding: 32px 0;
+    gap: 1.6vw; 
 }
-.nav-link {
-    display: flex;
+.nav-box{
+    display: inline;
+    border: 2px solid green;
+}
+.nav-text{
+    width:100%;
+    padding-right: 8px;
+    text-align:center;
+    margin-left: 2px;
+    box-sizing: border-box;
+    opacity: 100%;
+}
+.nav-box a{
+    display: none;
     text-decoration: none;
     color: var(--font-color);
-    padding: 8px 12px;
-    color: var(--color-text-darker);
-}
-.nav-link:hover {
     font-weight: bold;
+    position:absolute;
+    text-align:center;
+    margin-left: 1px;
+    transform: translateY(-100%)
+}
+.nav-box:hover .nav-text{
+    opacity: 0%;
+}
+.nav-box:hover a {
+    display: block;
 }
 .logo svg {
     margin-right: 12px;
@@ -46,12 +65,13 @@ nav{
 
 main {
     display: flex;
-    justify-content: center;
+    justify-content: center; 
 }
 
 .sections-container {
     width: 100%;
     max-width: var(--box-container-max-width);
+    margin: 0 8px 0 8px;
     padding: 0px var(--container-spacing-desktop);
 }
 /* ---- inizio sezioni e box ----- ----*/
