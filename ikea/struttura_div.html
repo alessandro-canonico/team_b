@@ -7,6 +7,8 @@
         <meta name="description" content="HTML navbar exercise" />
         <style>
             :root {
+                --background-image: linear-gradient(to bottom, transparent,transparent 65%, rgba(35, 17, 2, 0.9) 98%),
+
                 --def-font: Roboto, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen,
                     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
                 --button-color: rgb(0, 123, 39);
@@ -15,38 +17,37 @@
             }
             body {
                 margin: 0px;
+                max-width: 100vw;
             }
             nav {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: flex-start;
                 align-items: center;
-                padding: 24px 8vw;
+                padding: 16px 8vw;
             }
             .navlinks {
                 display: flex;
                 align-items: center;
-
+                gap: 8vw; 
             }
-
-            .nav-link.short{
+            .nav-link{
                 display: inline;
-                width: 56px;
+                border: 1px solid black;
+            }
+            .nav-box{
+                width:100%;
+                padding-right: 8px;
+                box-sizing: border-box;
+                opacity:0%;
+            }
+            .nav-link a{
                 text-decoration: none;
                 color: var(--font-color);
-                padding: 8px 16px;
+                position:absolute;
+                transform: translateY(-100%)
             }
-
-            .nav-link.large{
-                display: inline;
-                width:104px;
-                text-decoration: none;
-                color: var(--font-color);
-                padding: 8px 12px;
-            }
-
-
-            .nav-link:hover {
+            .nav-link a:hover {
                 font-weight: bold;
             }
             .logo img {
@@ -78,8 +79,7 @@
                 gap: 16px;
             }
             .h-box {
-                background: linear-gradient(to bottom, transparent,transparent 65%, rgba(29, 15, 4, 0.7) 99%),
-                     url(https://www.ikea.com/global/en/images/PH_196231_0f92c9cc30.jpg?f=xxxl);
+                     
                 
                 /* background-image: url(https://www.ikea.com/global/en/images/PH_196231_0f92c9cc30.jpg?f=xxxl);
                  */background-position: center center;
@@ -141,16 +141,19 @@
             <nav>
                 <section class="navlinks">
                     <a class="logo" href=""><img src="assets/ikea-logo.png" alt="logo ikea" /></a>
-                    <a class="nav-link short" href="">Stories</a>
-                    <a class="nav-link short" href="">Jobs</a>
-                    <a class="nav-link large" href="">Newsroom</a>
-                    <a class="nav-link large" href="">Our business</a>
+                    <span class="nav-link"><div class="nav-box">Stories</div><a href="">Stories</a></span>
+                    <span class="nav-link"><div class="nav-box">Jobs</div><a href="">Jobs</a></span>
+                    <span class="nav-link"><div class="nav-box">Newsroom</div><a href="">Newsroom</a></span>
+                    <span class="nav-link"><div class="nav-box">Our_business</div><a href="">Our business</a></span>
                 </section>
             </nav>
 
             <section class="box-container">
-                <div class="h-box">
-                    <div class="h-box-content">
+                <div class="h-box" style="
+                    background-image: url(https://www.ikea.com/global/en/images/PH_196231_0f92c9cc30.jpg?f=xxxl);">
+                    <div class="h-box-content" style="
+                    border: 2px dotted orange;
+                    background-image: linear-gradient(to bottom, rgba(0,0,0,0)15%, rgba(35, 17, 2, 0.9) 95%);">
                         <div class="h-box-text">
                             <p>Sopratitolo</p>
                             <div class="h-box-title">
