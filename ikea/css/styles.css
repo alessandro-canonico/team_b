@@ -109,7 +109,7 @@ main {
     align-items: flex-start;
     height: fit-content;
     width: 100%;
-    padding: 24px 10% 24px 24px;
+    padding: 24px 8% 24px 24px;
     color: white; /* aggiungere variabili font-color-light e font-color-dark */
     transition: 500ms transform ease;
     transform: translateX(-64px);
