@@ -78,11 +78,11 @@ main {
     text-decoration: none;
     overflow: hidden;
 }
-.short {
+.box-short {
     height: var(--box-height-low);
     max-height: calc(var(--box-container-max-width) / 2.2);
 }
-.tall {
+.box-tall {
     height: var(--box-height-def);
     max-height: calc(var(--box-container-max-width) / 2 * 1.07);
 }
