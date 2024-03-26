@@ -60,7 +60,7 @@ main {
     padding: 0 24px;
 }
 /* ---- inizio sezioni e box ----- ----*/
-.box-section {
+.box-container {
     display: flex;
     gap: var(--box-gap);
     margin-bottom: var(--box-gap);
@@ -69,34 +69,35 @@ main {
 
 /* ---- struttura delle box singole ---- ---- ---- */
 /* impostazione contenitore genitore */
-.v-box, .h-box, .h-box-low  {
+.box {
     display: flex;
     align-items: flex-end;
     width: 100%;
-    height: var(--box-height-def);
-    max-height: calc(var(--box-container-max-width) / 2 * 1.07);
     position: relative;
     border-radius: var(--border-radius-def);
     text-decoration: none;
     overflow: hidden;
 }
-.h-box-low {
+.short {
     height: var(--box-height-low);
     max-height: calc(var(--box-container-max-width) / 2.2);
 }
+.tall {
+    height: var(--box-height-def);
+    max-height: calc(var(--box-container-max-width) / 2 * 1.07);
+}
 /* impostazioni di video e immagini di sfondo */
-.v-box video, .h-box > img, .h-box-low >img {
+.box .bg-main {
     position: absolute;
     left: 50%;
     top: 50%;
     width: 100%;
     height: 100%;
     transform: translate(-50%, -50%);
-    aspect-ratio: 1 / 1;
     object-fit: cover;
 }
 /*gradiente semi trasparente (sopra lo sfondo, ma dietro il testo)*/
-.bg-gradient {
+.box .bg-overlay{
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -105,8 +106,11 @@ main {
     border-radius: 8px;
     background-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.7));
 }
+.box .bg-overlay-none {
+    background-image: none;
+}
 /*soprattitolo, titolo e freccetta*/
-.h-box-content {
+.box .bottom-elements {
     display: flex;
     align-items: flex-start;
     height: fit-content;
@@ -116,27 +120,36 @@ main {
     transition: 500ms transform ease;
     transform: translateX(-64px);
 }
+.box .elements-dark {
+    color: var(--color-text-darker);
+    text-shadow: none;
+}
+.box .elements-light {
+    color: var(--color-text-light);
+}
+.box .elements-light p {
+    text-shadow: 0 0 0.625rem rgba(0, 0, 0, .7);
+}
 /*titolo e soprattitolo*/
-.h-box-title {
+.box .text {
     height: fit-content;
     align-items: flex-start;
 }
-.h-box-content h2 {
+.box .bottom-elements h2 {
     font-size: 2.2rem;
     margin: 0;
     line-height: 120%;
     letter-spacing: 0.05rem;
 }
-.h-box-content p {
+.box .bottom-elements p {
     margin: 0;
-    text-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
 }
-.sections-container .box-section:last-child .h-box-content h2 {
+.sections-container .box-container:last-child .box .bottom-elements h2 {
     font-size: 3rem;
 }
 
 /*freccetta*/
-.h-box-content img {
+.box .bottom-elements .ico {
     height: 48px;
     width: 48px;
     margin-top: 1rem;
@@ -148,24 +161,24 @@ main {
 /*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
 /* ---- Inizio CSS freccetta a comparsa ---- ---- ---- */
-.h-box:hover .h-box-content{
+.box:hover .bottom-elements{
     transform: translateX(0);
 }
-.h-box:hover .h-box-content img {
+.box:hover .bottom-elements .ico {
     transform: translate(0);
     opacity: 100%;
 }
-.h-box-low:hover .h-box-content {
+.box:hover .bottom-elements {
     transform: translateX(0);
 }
-.h-box-low:hover .h-box-content img{
+.box:hover .bottom-elements .ico{
     transform: translate(0);
     opacity: 100%;
 }
-.v-box:hover .h-box-content {
+.box:hover .bottom-elements {
     transform: translateX(0);
 }
-.v-box:hover .h-box-content img {
+.box:hover .bottom-elements .ico {
     transform: translate(0);
     opacity: 100%;
 }
