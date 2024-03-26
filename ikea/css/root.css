@@ -32,3 +32,7 @@
     --color-grey-dark: #999999;
     
 }
+@font-face {
+    font-family: "Noto IKEA";
+    src: url('https://www.ikea.com/global/assets/fonts/woff2/noto-ikea-400.latin.647e877d.woff2') format('woff2');
+}

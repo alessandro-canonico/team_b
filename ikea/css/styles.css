@@ -1,8 +1,6 @@
 @import "root.css";
-@font-face {
-    font-family: "Noto IKEA";
-    src: url('https://www.ikea.com/global/assets/fonts/woff2/noto-ikea-400.latin.647e877d.woff2') format('woff2');
-}
+@import url(https://db.onlinewebfonts.com/c/b269e509d0e2d442240b8df6035c9999?family=Noto+IKEA+Latin+Bold);
+
 img,
 svg {
     display: block;
@@ -13,7 +11,9 @@ body {
     font-family: var(--ikea-font);
     background-color: var(--color-background);
 }
-
+h2 {
+    font-family: "Noto IKEA Latin Bold";
+}
 /*--- inizio nav e propri contenuti*/
 nav {
     display: flex;
@@ -116,7 +116,7 @@ main {
     height: fit-content;
     width: 100%;
     padding: 24px 8% 24px 24px;
-    color: white; /* aggiungere variabili font-color-light e font-color-dark */
+    color: white; 
     transition: 500ms transform ease;
     transform: translateX(-64px);
 }
@@ -139,7 +139,6 @@ main {
     font-size: 2.2rem;
     margin: 0;
     line-height: 120%;
-    letter-spacing: 0.05rem;
 }
 .box .bottom-elements p {
     margin: 0;
@@ -407,14 +406,4 @@ p {
     font-size: 1rem;
     margin: 0;
     padding: 0;
-}
-
-.img-container {
-}
-
-.black-text {
-    color: black;
-}
-.black-text p{
-    text-shadow: none;
 }
