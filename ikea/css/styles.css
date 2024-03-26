@@ -32,7 +32,6 @@ nav {
 .nav-link {
     display: flex;
     text-decoration: none;
-    color: var(--font-color);
     padding: 8px 12px;
     color: var(--color-text-darker);
 }
@@ -103,7 +102,7 @@ main {
     border-radius: 8px;
     background-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.7));
 }
-/*sopratitolo, titolo e freccetta*/
+/*soprattitolo, titolo e freccetta*/
 .h-box-content {
     display: flex;
     align-items: flex-start;
@@ -114,7 +113,7 @@ main {
     transition: 500ms transform ease;
     transform: translateX(-64px);
 }
-/*titolo e sopratitolo*/
+/*titolo e soprattitolo*/
 .h-box-title {
     height: fit-content;
     align-items: flex-start;
@@ -328,11 +327,6 @@ p {
     /*    font-family: monospace;*/
     justify-content: center;
 }
-
-/* commendato perchè vscode lo rilevava come erroe
-.show-more {
-}
-*/
 
 .go-shopping {
     display: flex;
