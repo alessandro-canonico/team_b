@@ -79,7 +79,7 @@ main {
 }
 .h-box-low {
     height: var(--box-height-low);
-    max-height: calc(var(--box-container-max-width) / 2);
+    max-height: calc(var(--box-container-max-width) / 2.2);
 }
 /* impostazioni di video e immagini di sfondo */
 .v-box video, .h-box > img, .h-box-low >img {
@@ -95,13 +95,12 @@ main {
 /*gradiente semi trasparente (sopra lo sfondo, ma dietro il testo)*/
 .bg-gradient {
     position: relative;
-
     display: flex;
     align-items: flex-end;
     height: 100%;
     width: 100%;
     border-radius: 8px;
-    background-image: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.6));
+    background-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.7));
 }
 /*sopratitolo, titolo e freccetta*/
 .h-box-content {
@@ -127,6 +126,9 @@ main {
 .h-box-content p {
     margin: 0;
     text-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+}
+.sections-container .box-section:last-child .h-box-content h2 {
+    font-size: 3rem;
 }
 
 /*freccetta*/
