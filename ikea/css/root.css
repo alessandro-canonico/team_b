@@ -1,4 +1,5 @@
 :root {
+    
     /*def = default*/
     --ikea-font: "Noto IKEA","Noto Sans Japanese","Roboto","Open Sans",system-ui,sans-serif !important;
     --button-color: rgb(0, 123, 39);
@@ -28,4 +29,5 @@
     --color-text-black: #000;
     --color-grey: #dfdfdf;
     --color-grey-dark: #999999;
+    
 }

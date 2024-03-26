@@ -1,5 +1,8 @@
 @import "root.css";
-
+@font-face {
+    font-family: "Noto IKEA";
+    src: url('https://www.ikea.com/global/assets/fonts/woff2/noto-ikea-400.latin.647e877d.woff2') format('woff2');
+}
 img,
 svg {
     display: block;
@@ -122,6 +125,7 @@ main {
     font-size: 2.2rem;
     margin: 0;
     line-height: 120%;
+    letter-spacing: 0.05rem;
 }
 .h-box-content p {
     margin: 0;
@@ -307,7 +311,7 @@ p {
 }
 .carousel2-container .carousel-content .carousel-text h2 {
     font-size: 3.175rem;
-    line-height: 115%;
+    line-height: 105%;
 } 
 
 
