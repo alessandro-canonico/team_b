@@ -5,11 +5,6 @@ svg {
     display: block;
 }
 
-@font-face {
-    font-family: "Noto IKEA";
-    src: url('https://www.ikea.com/global/assets/fonts/woff2/noto-ikea-400.latin.647e877d.woff2') format('woff2');
-}
-
 body {
     margin: 0;
     font-family: var(--ikea-font);
@@ -73,6 +68,7 @@ main {
 /* impostazione contenitore genitore */
 .v-box, .h-box, .h-box-low  {
     display: flex;
+    align-items: flex-end;
     width: 100%;
     height: var(--box-height-def);
     max-height: calc(var(--box-container-max-width) / 2 * 1.07);
@@ -83,7 +79,7 @@ main {
 }
 .h-box-low {
     height: var(--box-height-low);
-    max-height: calc(var(--box-container-max-width) / 2);
+    max-height: calc(var(--box-container-max-width) / 2.2);
 }
 /* impostazioni di video e immagini di sfondo */
 .v-box video, .h-box > img, .h-box-low >img {
@@ -96,9 +92,6 @@ main {
     aspect-ratio: 1 / 1;
     object-fit: cover;
 }
-.gradient {
-    background-image: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.6));
-}
 /*gradiente semi trasparente (sopra lo sfondo, ma dietro il testo)*/
 .bg-gradient {
     position: relative;
@@ -107,17 +100,16 @@ main {
     height: 100%;
     width: 100%;
     border-radius: 8px;
-    background-image: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.6));
+    background-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.7));
 }
 /*soprattitolo, titolo e freccetta*/
 .h-box-content {
-    color: white; /* aggiungere variabili font-color-light e font-color-dark */
     display: flex;
     align-items: flex-start;
     height: fit-content;
     width: 100%;
-    /*padding: 24px 10% 24px 24px;*/
-    padding: 24px 0 24px 24px;
+    padding: 24px 8% 24px 24px;
+    color: white; /* aggiungere variabili font-color-light e font-color-dark */
     transition: 500ms transform ease;
     transform: translateX(-64px);
 }
@@ -127,14 +119,16 @@ main {
     align-items: flex-start;
 }
 .h-box-content h2 {
+    font-size: 2.2rem;
     margin: 0;
     line-height: 120%;
-    font-size: 2.25rem;
-    font-weight: 700;
 }
 .h-box-content p {
     margin: 0;
     text-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+}
+.sections-container .box-section:last-child .h-box-content h2 {
+    font-size: 3rem;
 }
 
 /*freccetta*/
@@ -179,7 +173,7 @@ main {
     align-items: center;
     width: 100%;
     height: fit-content;
-    /*max-height: var(--carousel-height);*/
+    max-height: var(--carousel-height);
     max-height: calc(var(--box-container-max-width) / 4);
     padding: 3.75rem;
     border-radius: var(--border-radius-def);
@@ -187,10 +181,6 @@ main {
 }
 /* contenitore di testo e galleria */
 .carousel-content {
-    padding: 24px 0 24px 24px;
-    transition: 500ms transform ease;
-    transform: translateX(-64px);
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -363,6 +353,8 @@ p {
 /*section 7 css setti*/
 
 .container-report {
+    display: flex;
+    align-items: stretch;
     background-color: var(--color-grey-dark);
     color: var(--color-background);
 }
@@ -405,4 +397,7 @@ p {
 
 .black-text {
     color: black;
+}
+.black-text p{
+    text-shadow: none;
 }
