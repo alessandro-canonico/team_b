@@ -1,7 +1,8 @@
 @import "root.css";
 @font-face {
     font-family: "Noto IKEA";
-    src: url('https://www.ikea.com/global/assets/fonts/woff2/noto-ikea-400.latin.647e877d.woff2') format('woff2');
+    src: url("https://www.ikea.com/global/assets/fonts/woff2/noto-ikea-400.latin.647e877d.woff2")
+        format("woff2");
 }
 img,
 svg {
@@ -21,6 +22,7 @@ nav {
 }
 .nav-container {
     display: flex;
+    align-items: center;
     box-sizing: border-box;
     padding: 0 24px;
     width: 100%;
@@ -69,7 +71,9 @@ main {
 
 /* ---- struttura delle box singole ---- ---- ---- */
 /* impostazione contenitore genitore */
-.v-box, .h-box, .h-box-low  {
+.v-box,
+.h-box,
+.h-box-low {
     display: flex;
     align-items: flex-end;
     width: 100%;
@@ -85,7 +89,9 @@ main {
     max-height: calc(var(--box-container-max-width) / 2.2);
 }
 /* impostazioni di video e immagini di sfondo */
-.v-box video, .h-box > img, .h-box-low >img {
+.v-box video,
+.h-box > img,
+.h-box-low > img {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -148,7 +154,7 @@ main {
 /*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
 /* ---- Inizio CSS freccetta a comparsa ---- ---- ---- */
-.h-box:hover .h-box-content{
+.h-box:hover .h-box-content {
     transform: translateX(0);
 }
 .h-box:hover .h-box-content img {
@@ -158,7 +164,7 @@ main {
 .h-box-low:hover .h-box-content {
     transform: translateX(0);
 }
-.h-box-low:hover .h-box-content img{
+.h-box-low:hover .h-box-content img {
     transform: translate(0);
     opacity: 100%;
 }
@@ -172,7 +178,8 @@ main {
 /*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
 /* ------- inizio CSS carosello ----------*/
-.carousel-container, .carousel2-container {
+.carousel-container,
+.carousel2-container {
     display: flex;
     align-items: center;
     width: 100%;
@@ -225,19 +232,18 @@ p {
 .carousel-gallery-cards {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns:calc(var(--box-container-max-width) * 0.175) ;
+    grid-auto-columns: calc(var(--box-container-max-width) * 0.175);
     width: calc(var(--box-container-max-width) * 0.175 * 3 + 32px);
     height: fit-content;
     gap: 16px;
     overflow-y: hidden;
     overflow-x: scroll;
 }
-    /*
+/*
     può tornare utile per lo scroll con i bottoni :
         .carousel-gallery-cards { scroll-snap-type: inline mandatory;}
         .carousel-gallery-cards > * { scroll-snap-align: start;} 
     */
-
 
 .carousel-gallery-cards::-webkit-scrollbar {
     height: 16px;
@@ -247,7 +253,8 @@ p {
     border-top: 3px solid black;
 }
 
-.carousel-gallery .button-right, .button-left {
+.carousel-gallery .button-right,
+.button-left {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -263,7 +270,8 @@ p {
     left: calc(3.75rem / 2 * -1);
 }
 
-.button-right img, .button-left img{
+.button-right img,
+.button-left img {
     height: 24px;
     width: 24px;
 }
@@ -306,15 +314,18 @@ p {
 .carousel-card section p {
     font-size: 0.85rem;
 }
-.carousel2-container .carousel-content .carousel-gallery .carousel-gallery-cards .carousel-card section{ 
+.carousel2-container
+    .carousel-content
+    .carousel-gallery
+    .carousel-gallery-cards
+    .carousel-card
+    section {
     height: 20%;
 }
 .carousel2-container .carousel-content .carousel-text h2 {
     font-size: 3.175rem;
     line-height: 105%;
-} 
-
-
+}
 
 /* ------- fine CSS carosello ----------*/
 
@@ -363,7 +374,6 @@ p {
     color: var(--color-background);
 }
 
-
 .image-report {
     object-position: 50% 50%;
 }
@@ -377,7 +387,6 @@ p {
     -o-object-fit: cover;
     object-fit: cover;
     border-radius: var(--border-radius-def);
-
 }
 
 .report-text h2 {
@@ -402,6 +411,75 @@ p {
 .black-text {
     color: black;
 }
-.black-text p{
+.black-text p {
     text-shadow: none;
+}
+
+
+
+/* mobile-sidebar, regole da attivare solo per mobile (max-width: 500px -più o meno-) */
+.mobile-ico {
+    height: 32px;
+    width: 32px;
+    background-color: gray;
+}
+
+.mobile-sidebar {
+    position: fixed;
+    background-color: white;
+    z-index: 1;
+    width: 28rem;
+    height: 100svh;
+    right: 0;
+    top: 0;
+    box-sizing: border-box;
+    transition: transform 300ms ease-in-out;
+    transform: translateX(27rem);
+}
+
+.mobile-sidebar .header {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.mobile-sidebar .header .close {
+    border: solid;
+    height: 32px;
+    width: 32px;
+}
+.mobile-sidebar .list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+.mobile-sidebar .list .go-shopping {
+    height: 160px;
+    width: 100%;
+    background-color: #ffdb00;
+    border-radius: var(--border-radius-def);
+}
+.mobile-sidebar .list .link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.125rem 0 1rem;
+    border-bottom: 0.0625rem solid #cccccc;
+    font-size: 1.05rem;
+    line-height: 120%;
+    height: 7.5rem;
+}
+.mobile-sidebar .list .link img{
+    height: 24;
+    width: 24;
+}
+
+.mobile-ico:hover ~ .mobile-sidebar {
+    box-shadow: 0 0 0  1280px rgba(0, 0, 0, 0.5);
+    transform: translateX(0);
 }
