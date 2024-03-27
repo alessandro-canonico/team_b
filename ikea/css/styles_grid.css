@@ -2,81 +2,82 @@
 
 img,
 svg {
-    display: block;
+  display: block;
 }
 
 body {
-    margin: 0;
-    font-family: var(--ikea-font);
-    background-color: var(--color-background);
+  margin: 0;
+  font-family: var(--ikea-font);
+  background-color: var(--color-background);
 }
 
 /*--- inizio nav e propri contenuti*/
 nav {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .nav-container {
-    display: flex;
-    box-sizing: border-box;
-    padding: 0 24px;
-    width: 100%;
-    max-width: var(--box-container-max-width);
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 24px;
+  width: 100%;
+  max-width: var(--box-container-max-width);
 }
 .nav-links {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 32px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 32px 0;
 }
 .nav-link {
-    display: flex;
-    text-decoration: none;
-    padding: 8px 12px;
-    color: var(--color-text-darker);
+  display: flex;
+  text-decoration: none;
+  padding: 8px 12px;
+  color: var(--color-text-darker);
 }
 .nav-link:hover {
-    font-weight: bold;
+  font-weight: bold;
 }
 .logo svg {
-    margin-right: 12px;
+  margin-right: 12px;
 }
 /*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
 .sections-container {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto;
-    padding: 0 24px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding: 0 1rem;
 }
 
 /* ---- inizio sezioni e box ----- ----*/
 
-
 .box-section-1-col {
-    margin-bottom: var(--box-gap);
-    gap: var(--box-gap);
+  margin-bottom: var(--box-gap);
+  gap: var(--box-gap);
 }
 
 .box-section-2-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--box-gap);
-    margin-bottom: var(--box-gap);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--box-gap);
+  margin-bottom: var(--box-gap);
 }
 
 /* ---- struttura delle box singole ---- ---- ---- */
 /* impostazione contenitore genitore */
-.v-box, .h-box, .h-box-low  {
-    display: flex;
-    align-items: flex-end;
-/*     width: 100%; */
-    height: var(--box-height-def);
-/*     max-height: calc(var(--box-container-max-width) / 2 * 1.07); */
-    position: relative;
-    border-radius: var(--border-radius-def);
-    text-decoration: none;
-    overflow: hidden;
+.v-box,
+.h-box,
+.h-box-low {
+  display: flex;
+  align-items: flex-end;
+  /*     width: 100%; */
+  height: var(--box-height-def);
+  /*     max-height: calc(var(--box-container-max-width) / 2 * 1.07); */
+  position: relative;
+  border-radius: var(--border-radius-def);
+  text-decoration: none;
+  overflow: hidden;
 }
 
 /* .h-box-low {
@@ -85,36 +86,42 @@ nav {
 } se attiva cambierebbe di poco l'altezza, si potrebbe eliminare*/
 
 /* impostazioni di video e immagini di sfondo */
-.v-box video, .h-box > img, .h-box-low >img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+.v-box video,
+.h-box > img,
+.h-box-low > img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 /*gradiente semi trasparente (sopra lo sfondo, ma dietro il testo)*/
 .bg-gradient {
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    height: 100%;
-    width: 100%;
-    border-radius: 8px;
-    background-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.7));
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 60%,
+    rgba(0, 0, 0, 0.7)
+  );
 }
 /*soprattitolo, titolo e freccetta*/
 .h-box-content {
-    display: flex;
-/*     align-items: flex-start; */
-/*     height: fit-content; */
-/*     width: 100%; */
-    padding: 24px 8% 24px 24px;
-    color: white; /* aggiungere variabili font-color-light e font-color-dark */
-    transition: 500ms transform ease;
-    transform: translateX(-64px);
+  display: flex;
+  align-items: flex-end;
+  /*     height: fit-content;  */
+  width: 100%;
+  padding: 24px 8% 24px 24px;
+  color: white; /* aggiungere variabili font-color-light e font-color-dark */
+  transition: 500ms transform ease;
+  transform: translateX(-64px);
 }
 /*titolo e soprattitolo*/
 /* .h-box-title {
@@ -122,283 +129,385 @@ nav {
     align-items: flex-start;
 } */
 .h-box-content h2 {
-    font-size: 2.2rem;
-    margin: 0;
-    line-height: 120%;
+  font-size: 2.2rem;
+  margin: 0;
+  line-height: 120%;
 }
 .h-box-content p {
-    margin: 0;
-/*     text-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5); */
+  margin: 0;
+  /*     text-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5); */
 }
 .sections-container .box-section:last-child .h-box-content h2 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 /*freccetta*/
 .h-box-content img {
-    height: 48px;
-    width: 48px;
-    margin-top: 1rem;
-    margin-right: 16px;
-    opacity: 1;
-    transition: 400ms ease;
-    transform: translateX(-5rem);
+  height: 48px;
+  width: 48px;
+  margin-top: 1rem;
+  margin-right: 16px;
+  opacity: 1;
+  transition: 400ms ease;
+  transform: translateX(-5rem);
 }
 
 .bi-arrow-right {
-    font-size: 2.5em;
-    margin-right: 12px;
-    margin-top: 12px;
+  font-size: 2.5em;
+  margin-right: 12px;
+  margin-top: 12px;
 }
 /*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
 /* ---- Inizio CSS freccetta a comparsa ---- ---- ---- */
-.h-box:hover .h-box-content{
-    transform: translateX(0);
+.h-box:hover .h-box-content {
+  transform: translateX(0);
 }
 .h-box:hover .h-box-content img {
-    transform: translate(0);
+  transform: translate(0);
 }
 .h-box-low:hover .h-box-content {
-    transform: translateX(0);
+  transform: translateX(0);
 }
-.h-box-low:hover .h-box-content img{
-    transform: translate(0);
-    opacity: 100%;
+.h-box-low:hover .h-box-content img {
+  transform: translate(0);
+  opacity: 100%;
 }
 .v-box:hover .h-box-content {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 .v-box:hover .h-box-content img {
-    transform: translate(0);
-    opacity: 100%;
+  transform: translate(0);
+  opacity: 100%;
 }
 /*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
 /* ------- inizio CSS carosello ----------*/
-.carousel-container, .carousel2-container {
-    display: flex;
-    align-items: center;
-    height: fit-content;
-    max-height: var(--carousel-height);
-    max-height: calc(var(--box-container-max-width) / 4);
-    padding: 3.75rem;
-    border-radius: var(--border-radius-def);
-    overflow: hidden;
+.carousel-container,
+.carousel2-container {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  max-height: var(--carousel-height);
+  max-height: calc(var(--box-container-max-width) / 4);
+  padding: 3.75rem;
+  border-radius: var(--border-radius-def);
+  overflow: hidden;
 }
 /* contenitore di testo e galleria */
 .carousel-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 /* testo sulla destra*/
 .carousel-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-    max-width: 30%;
-    margin-right: 1.75em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  max-width: 30%;
+  margin-right: 1.75em;
 }
 .carousel-text h2,
 p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .carousel-text h2 {
-    font-size: 2.25rem;
-    line-height: 120%;
+  font-size: 2.25rem;
+  line-height: 120%;
 }
 .carousel-text p {
-    line-height: 180%;
+  line-height: 180%;
 }
 
 /* galleria */
 .carousel-gallery {
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    height: fit-content;
-    position: relative;
-
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  position: relative;
 }
 .carousel-gallery-cards {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns:calc(var(--box-container-max-width) * 0.175) ;
-    width: calc(var(--box-container-max-width) * 0.175 * 3 + 32px);
-    height: fit-content;
-    gap: 16px;
-    overflow-y: hidden;
-    overflow-x: scroll;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(var(--box-container-max-width) * 0.175);
+  width: calc(var(--box-container-max-width) * 0.175 * 3 + 32px);
+  height: fit-content;
+  gap: 16px;
+  overflow-y: hidden;
+  overflow-x: scroll;
 }
-    /*
+/*
     può tornare utile per lo scroll con i bottoni :
         .carousel-gallery-cards { scroll-snap-type: inline mandatory;}
         .carousel-gallery-cards > * { scroll-snap-align: start;} 
     */
 
-
 .carousel-gallery-cards::-webkit-scrollbar {
-    height: 16px;
-    border-top: 3px solid white;
+  height: 16px;
+  border-top: 3px solid white;
 }
 .carousel-gallery-cards::-webkit-scrollbar-thumb:horizontal {
-    border-top: 3px solid black;
+  border-top: 3px solid black;
 }
 
-.carousel-gallery .button-right, .button-left {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 3.75rem;
-    width: 3.75rem;
-    border-radius: 3.75rem;
-    background-color: black;
-    position: absolute;
-    right: calc(3.75rem / 2 * -1);
-    border: none;
+.carousel-gallery .button-right,
+.button-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.75rem;
+  width: 3.75rem;
+  border-radius: 3.75rem;
+  background-color: black;
+  position: absolute;
+  right: calc(3.75rem / 2 * -1);
+  border: none;
 }
 .carousel-gallery .button-left {
-    left: calc(3.75rem / 2 * -1);
+  left: calc(3.75rem / 2 * -1);
 }
 
-.button-right img, .button-left img{
-    height: 24px;
-    width: 24px;
+.button-right img,
+.button-left img {
+  height: 24px;
+  width: 24px;
 }
 
 .carousel-card {
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    height: 340px;
-    margin-bottom: 16px;
-    border-radius: var(--border-radius-def);
-    background-color: var(--color-background);
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  height: 340px;
+  margin-bottom: 16px;
+  border-radius: var(--border-radius-def);
+  background-color: var(--color-background);
+  overflow: hidden;
 }
 .carousel-card img {
-    height: 20%;
-    flex-grow: 1;
-    object-fit: cover;
+  height: 20%;
+  flex-grow: 1;
+  object-fit: cover;
 }
 .carousel-card video {
-    height: 20%;
-    flex-grow: 1;
-    object-fit: cover;
+  height: 20%;
+  flex-grow: 1;
+  object-fit: cover;
 }
 .carousel-card section {
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    padding: 16px 8px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding: 16px 8px 16px 16px;
 }
 .carousel-card section h3,
 p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .carousel-card section h3 {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 .carousel-card section p {
-    font-size: 0.85rem;
+  font-size: 0.85rem;
 }
-.carousel2-container .carousel-content .carousel-gallery .carousel-gallery-cards .carousel-card section{ 
-    height: 20%;
+.carousel2-container
+  .carousel-content
+  .carousel-gallery
+  .carousel-gallery-cards
+  .carousel-card
+  section {
+  height: 20%;
 }
 .carousel2-container .carousel-content .carousel-text h2 {
-    font-size: 3.175rem;
-    line-height: 115%;
-} 
-
-
+  font-size: 3.175rem;
+  line-height: 115%;
+}
 
 /* ------- fine CSS carosello ----------*/
 
 /*francesco box2 go shopping section */
 .region-picker {
-    display: flex;
-    flex-direction: column;
-    background: var(--color-ikea-yellow-hover);
-    padding: 0;
-    width: 25%;
-    letter-spacing: -0.96px;
-    line-height: 43px;
-    border-radius: var(--border-radius-def);
-    /*    font-family: monospace;*/
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-ikea-yellow-hover);
+  padding: 0;
+  width: 25%;
+  letter-spacing: -0.96px;
+  line-height: 43px;
+  border-radius: var(--border-radius-def);
+  /*    font-family: monospace;*/
+  justify-content: center;
 }
 
 .go-shopping {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
 }
 
 #region-selector {
-    min-height: 15%;
-    max-height: 15%;
-    background-color: var(--color-ikea-yellow);
-    display: flex;
-    justify-content: center;
+  min-height: 15%;
+  max-height: 15%;
+  background-color: var(--color-ikea-yellow);
+  display: flex;
+  justify-content: center;
 }
 
 .region-picker-above {
-    display: flex;
-    flex: 2 75%;
-    flex-direction: column;
-    justify-content: center;
-    /*text-align: center;*/
-    padding: 5%;
+  display: flex;
+  flex: 2 75%;
+  flex-direction: column;
+  justify-content: center;
+  /*text-align: center;*/
+  padding: 5%;
 }
 /*section 7 css setti*/
 
 .container-report {
-    display: flex;
-    align-items: stretch;
-    background-color: var(--color-grey-dark);
-    color: var(--color-background);
+  display: flex;
+  align-items: stretch;
+  background-color: var(--color-grey-dark);
+  color: var(--color-background);
 }
 
-
 .image-report {
-    object-position: 50% 50%;
+  object-position: 50% 50%;
 }
 
 .img-svelte {
-    /*position: absolute;*/
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-    border-radius: var(--border-radius-def);
-
+  /*position: absolute;*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: var(--border-radius-def);
 }
 
 .report-text h2 {
-    font-size: 3rem;
-    line-height: 108%;
-    font-weight: 700;
-    margin: 1rem 0;
-    word-wrap: break-word;
-    max-width: 8ch;
-    letter-spacing: -0.115rem;
+  font-size: 3rem;
+  line-height: 108%;
+  font-weight: 700;
+  margin: 1rem 0;
+  word-wrap: break-word;
+  max-width: 8ch;
+  letter-spacing: -0.115rem;
 }
 
 .report-text p {
-    font-size: 1rem;
-    margin: 0;
-    padding: 0;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 .black-text {
-    color: black;
+  color: black;
 }
-.black-text p{
-    text-shadow: none;
+.black-text p {
+  text-shadow: none;
 }
+
+/* -----------------inizio footer alessandro */
+
+footer .top-box {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  padding-bottom: 2rem;
+}
+
+.room-box {
+  position: relative;
+  width: 100%;
+}
+
+.room-box img {
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+
+.room-img-lights {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.room-box .first-btn {
+    position: absolute;
+    max-width: 1em;
+    height: 100%;
+    top: 6.8em;
+    left: 19.8em;
+    display: block;
+}
+
+.room-box .second-btn {
+    position: absolute;
+    max-width: 1em;
+    top: 9em;
+    right: 22.8em;
+    display: block;
+}
+
+.room-box .third-btn {
+    position: absolute;
+    max-width: 1em;
+    top: 9.8em;
+    right: 3.9em;
+    display: block;
+}
+
+footer .bottom-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  padding: 24px;
+  background-color: var(--color-ikea-blue);
+}
+
+.bottom-box .links {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.bottom-box .links a {
+  text-decoration: none;
+  color: white;
+  padding: 0 0.75rem;
+  margin: 0;
+  font-weight: 500;
+  border-right: 1px solid white;
+  font-size: 1rem;
+}
+
+.bottom-box .links a:last-child {
+  border-right: none;
+}
+
+.bottom-box .info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-box .info .center {
+  display: flex;
+  gap: 2px;
+  font-size: 0.7rem;
+  color: white;
+}
+
+.bottom-box .info a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.7rem;
+}
+
+/* -----------------fine footer alessandro */
