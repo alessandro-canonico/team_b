@@ -43,11 +43,15 @@ nav {
 }
 /*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
+
 .sections-container {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto;
-  padding: 0 1rem;
+  padding: 0 24px;
+  max-width: 90rem;
+  margin: auto;
+  box-sizing: border-box;
 }
 
 /* ---- inizio sezioni e box ----- ----*/
@@ -73,17 +77,17 @@ nav {
   align-items: flex-end;
   /*     width: 100%; */
   height: var(--box-height-def);
-  /*     max-height: calc(var(--box-container-max-width) / 2 * 1.07); */
+  max-height: calc(var(--box-container-max-width) / 2 * 1.07);
   position: relative;
   border-radius: var(--border-radius-def);
   text-decoration: none;
   overflow: hidden;
 }
 
-/* .h-box-low {
+.h-box-low {
     height: var(--box-height-low);
     max-height: calc(var(--box-container-max-width) / 2.2);
-} se attiva cambierebbe di poco l'altezza, si potrebbe eliminare*/
+}
 
 /* impostazioni di video e immagini di sfondo */
 .v-box video,
@@ -116,7 +120,6 @@ nav {
 .h-box-content {
   display: flex;
   align-items: flex-end;
-  /*     height: fit-content;  */
   width: 100%;
   padding: 24px 8% 24px 24px;
   color: white; /* aggiungere variabili font-color-light e font-color-dark */
@@ -124,6 +127,7 @@ nav {
   transform: translateX(-64px);
 }
 /*titolo e soprattitolo*/
+
 /* .h-box-title {
     height: fit-content;
     align-items: flex-start;
@@ -135,7 +139,7 @@ nav {
 }
 .h-box-content p {
   margin: 0;
-  /*     text-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5); */
+  text-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
 }
 .sections-container .box-section:last-child .h-box-content h2 {
   font-size: 3rem;
@@ -152,8 +156,8 @@ nav {
   transform: translateX(-5rem);
 }
 
-.bi-arrow-right {
-  font-size: 2.5em;
+.material-symbols-outlined {
+  font-variation-settings: 'opsz' 48;
   margin-right: 12px;
   margin-top: 12px;
 }
@@ -439,7 +443,7 @@ footer .top-box {
   width: 100%;
 }
 
-.room-box .first-btn {
+.room-box .switch-1 {
     position: absolute;
     max-width: 1em;
     height: 100%;
@@ -448,7 +452,7 @@ footer .top-box {
     display: block;
 }
 
-.room-box .second-btn {
+.room-box .switch-2 {
     position: absolute;
     max-width: 1em;
     top: 9em;
@@ -456,7 +460,7 @@ footer .top-box {
     display: block;
 }
 
-.room-box .third-btn {
+.room-box .switch-3 {
     position: absolute;
     max-width: 1em;
     top: 9.8em;
@@ -485,7 +489,7 @@ footer .bottom-box {
   margin: 0;
   font-weight: 500;
   border-right: 1px solid white;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 .bottom-box .links a:last-child {
