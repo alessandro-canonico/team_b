@@ -12,7 +12,9 @@
     --box-height-low: 40vw;
     --carousel-height: 30vw;
     --container-spacing-desktop: 1.5rem;
-
+     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 
     /*colori ikea ufficiali*/
     --color-logo: #fae6e6;
@@ -30,7 +32,7 @@
     --color-text-light: #fffefb;
     --color-grey: #dfdfdf;
     --color-grey-dark: #999999;
-    
+   
 }
 @font-face {
     font-family: "Noto IKEA";

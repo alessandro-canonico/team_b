@@ -1,6 +1,14 @@
 @import "root.css";
-@import url(https://db.onlinewebfonts.com/c/b269e509d0e2d442240b8df6035c9999?family=Noto+IKEA+Latin+Bold);
-
+@font-face {
+    font-family: "Noto IKEA Latin Bold";
+    src: url("https://db.onlinewebfonts.com/t/b269e509d0e2d442240b8df6035c9999.eot");
+    src:
+        url("https://db.onlinewebfonts.com/t/b269e509d0e2d442240b8df6035c9999.eot?#iefix")
+            format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/b269e509d0e2d442240b8df6035c9999.woff2")
+            format("woff2"),
+        url("https://db.onlinewebfonts.com/t/b269e509d0e2d442240b8df6035c9999.woff") format("woff");
+}
 img,
 svg {
     display: block;
@@ -17,28 +25,26 @@ h2 {
 /*--- inizio nav e propri contenuti*/
 nav {
     display: flex;
-    justify-content: center;
-}
-.nav-container {
     display: flex;
     box-sizing: border-box;
     padding: 0 24px;
     width: 100%;
     max-width: var(--box-container-max-width);
+    margin: auto;
 }
-.nav-links {
+nav .links-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 32px 0;
 }
-.nav-link {
+nav .link {
     display: flex;
     text-decoration: none;
     padding: 8px 12px;
     color: var(--color-text-darker);
 }
-.nav-link:hover {
+nav .link:hover {
     font-weight: bold;
 }
 .logo svg {
@@ -48,19 +54,16 @@ nav {
 
 main {
     display: flex;
-    justify-content: center;
-}
-
-.sections-container {
-    display: flex;
     flex-direction: column;
+    justify-content: center;
     box-sizing: border-box;
     width: 100%;
     max-width: var(--box-container-max-width);
     padding: 0 24px;
+    margin: auto;
 }
 /* ---- inizio sezioni e box ----- ----*/
-.box-container {
+.box-container-2-col {
     display: flex;
     gap: var(--box-gap);
     margin-bottom: var(--box-gap);
@@ -97,7 +100,7 @@ main {
     object-fit: cover;
 }
 /*gradiente semi trasparente (sopra lo sfondo, ma dietro il testo)*/
-.box .bg-overlay{
+.box .bg-overlay {
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -116,7 +119,7 @@ main {
     height: fit-content;
     width: 100%;
     padding: 24px 8% 24px 24px;
-    color: white; 
+    color: white;
     transition: 500ms transform ease;
     transform: translateX(-64px);
 }
@@ -128,7 +131,7 @@ main {
     color: var(--color-text-light);
 }
 .box .elements-light p {
-    text-shadow: 0 0 0.625rem rgba(0, 0, 0, .7);
+    text-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.7);
 }
 .box .bottom-elements h2 {
     font-size: 2.2rem;
@@ -138,7 +141,7 @@ main {
 .box .bottom-elements p {
     margin: 0;
 }
-.sections-container .box-container:last-child .box .bottom-elements h2 {
+.sections-container .box-container-2-col:last-child .box .bottom-elements h2 {
     font-size: 3rem;
 }
 
@@ -155,7 +158,7 @@ main {
 /*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
 /* ---- Inizio CSS freccetta a comparsa ---- ---- ---- */
-.box:hover .bottom-elements{
+.box:hover .bottom-elements {
     transform: translateX(0);
 }
 .box:hover .bottom-elements .ico {
@@ -165,7 +168,7 @@ main {
 .box:hover .bottom-elements {
     transform: translateX(0);
 }
-.box:hover .bottom-elements .ico{
+.box:hover .bottom-elements .ico {
     transform: translate(0);
     opacity: 100%;
 }
@@ -179,82 +182,83 @@ main {
 /*---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----*/
 
 /* ------- inizio CSS carosello ----------*/
-.carousel-container, .carousel2-container {
+.carousel {
     display: flex;
     align-items: center;
     width: 100%;
     height: fit-content;
     max-height: var(--carousel-height);
     max-height: calc(var(--box-container-max-width) / 4);
-    padding: 3.75rem;
+    padding: 3.75rem 5.75rem 3.75rem 3.75rem;
     border-radius: var(--border-radius-def);
     overflow: hidden;
 }
 /* contenitore di testo e galleria */
-.carousel-content {
+.carousel .content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100%;
     width: 100%;
+    box-sizing: border-box;
 }
 /* testo sulla destra*/
-.carousel-text {
+.carousel .left-elements {
     display: flex;
     flex-direction: column;
     gap: 0.625rem;
-    min-width: 350px;
+    min-width: 300px;
     max-width: 30%;
     margin-right: 1.75em;
 }
-.carousel-text h2,
+.carousel .left-elements h2,
 p {
     margin: 0;
     padding: 0;
 }
-.carousel-text h2 {
+.carousel .left-elements h2 {
     font-size: 2.25rem;
     line-height: 120%;
+    letter-spacing: -0.08rem;
 }
-.carousel-text p {
-    line-height: 180%;
+.carousel .left-elements p {
+    line-height: 160%;
 }
 
-/* galleria */
-.carousel-gallery {
+.carousel .right-elements {
     display: flex;
     align-items: center;
     width: fit-content;
     height: fit-content;
     position: relative;
-    margin-left: 1.75rem;
 }
-.carousel-gallery-cards {
+.carousel .gallery {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns:calc(var(--box-container-max-width) * 0.175) ;
-    width: calc(var(--box-container-max-width) * 0.175 * 3 + 32px);
+    grid-auto-columns: calc(var(--box-container-max-width) * 0.175);
+    width: calc(var(--box-container-max-width) * (0.175 * 3) + 50px);
     height: fit-content;
-    gap: 16px;
+    gap: 24px;
     overflow-y: hidden;
     overflow-x: scroll;
 }
-    /*
+/*
     può tornare utile per lo scroll con i bottoni :
-        .carousel-gallery-cards { scroll-snap-type: inline mandatory;}
-        .carousel-gallery-cards > * { scroll-snap-align: start;} 
+        .gallery { scroll-snap-type: inline mandatory;}
+        .gallery > * { scroll-snap-align: start;} 
     */
 
-
-.carousel-gallery-cards::-webkit-scrollbar {
+.carousel .gallery::-webkit-scrollbar {
     height: 16px;
     border-top: 3px solid white;
 }
-.carousel-gallery-cards::-webkit-scrollbar-thumb:horizontal {
+.carousel .gallery::-webkit-scrollbar-thumb:horizontal {
     border-top: 3px solid black;
 }
 
-.carousel-gallery .button-right, .button-left {
+.carousel .right-elements .button-right,
+.button-left {
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -262,66 +266,63 @@ p {
     width: 3.75rem;
     border-radius: 3.75rem;
     background-color: black;
-    position: absolute;
-    right: calc(3.75rem / 2 * -1);
     border: none;
 }
-.carousel-gallery .button-left {
+.carousel .right-elements .button-right {
+    right: calc(3.75rem / 2 * -1);
+}
+.carousel .right-elements .button-left {
     left: calc(3.75rem / 2 * -1);
 }
 
-.button-right img, .button-left img{
+.carousel .right-elements .button-right img,
+.button-left img {
     height: 24px;
     width: 24px;
 }
 
-.carousel-card {
+.carousel .card {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
     box-sizing: border-box;
-    height: 340px;
-    margin-bottom: 16px;
+    height: 350px;
+    margin-bottom: 24px;
     border-radius: var(--border-radius-def);
     background-color: var(--color-background);
     overflow: hidden;
 }
-.carousel-card img {
+.carousel .card img,
+video {
     height: 20%;
     flex-grow: 1;
     object-fit: cover;
 }
-.carousel-card video {
-    height: 20%;
-    flex-grow: 1;
-    object-fit: cover;
-}
-.carousel-card section {
+.carousel .card .bottom-elements {
     display: flex;
     flex-direction: column;
     height: fit-content;
     padding: 16px 8px 16px 16px;
 }
-.carousel-card section h3,
+.carousel .card .bottom-elements h3,
 p {
     margin: 0;
     padding: 0;
 }
-.carousel-card section h3 {
+.carousel .card .bottom-elements h3 {
     font-size: 1rem;
+    font-family: "Noto IKEA Latin Bold";
 }
-.carousel-card section p {
+.carousel .card .bottom-elements p {
     font-size: 0.85rem;
 }
-.carousel2-container .carousel-content .carousel-gallery .carousel-gallery-cards .carousel-card section{ 
+.carousel .card .bottom-elements-spacious {
     height: 20%;
 }
-.carousel2-container .carousel-content .carousel-text h2 {
+.carousel .content .left-elements-bigger h2 {
     font-size: 3.175rem;
     line-height: 105%;
-} 
-
-
+}
 
 /* ------- fine CSS carosello ----------*/
 
@@ -370,7 +371,6 @@ p {
     color: var(--color-background);
 }
 
-
 .image-report {
     object-position: 50% 50%;
 }
@@ -384,7 +384,6 @@ p {
     -o-object-fit: cover;
     object-fit: cover;
     border-radius: var(--border-radius-def);
-
 }
 
 .report-text h2 {
