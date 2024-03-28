@@ -1,7 +1,6 @@
 @import "root.css";
 @font-face {
     font-family: "Noto IKEA Latin Bold";
-    src: url("https://db.onlinewebfonts.com/t/b269e509d0e2d442240b8df6035c9999.eot");
     src:
         url("https://db.onlinewebfonts.com/t/b269e509d0e2d442240b8df6035c9999.eot?#iefix")
             format("embedded-opentype"),
