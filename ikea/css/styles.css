@@ -130,11 +130,6 @@ main {
 .box .elements-light p {
     text-shadow: 0 0 0.625rem rgba(0, 0, 0, .7);
 }
-/*titolo e soprattitolo*/
-.box .text {
-    height: fit-content;
-    align-items: flex-start;
-}
 .box .bottom-elements h2 {
     font-size: 2.2rem;
     margin: 0;
